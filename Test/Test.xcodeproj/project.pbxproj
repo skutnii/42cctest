@@ -24,6 +24,12 @@
 		22750FAF1783321900CC814E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FAE1783321900CC814E /* second@2x.png */; };
 		22750FB21783321900CC814E /* TSKFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB01783321900CC814E /* TSKFirstViewController.xib */; };
 		22750FB51783321900CC814E /* TSKSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB31783321900CC814E /* TSKSecondViewController.xib */; };
+		22750FBD1783377700CC814E /* TestData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22750FBB1783377700CC814E /* TestData.xcdatamodeld */; };
+		22750FC217833BC800CC814E /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
+		22750FC817833BCA00CC814E /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
+		22750FCB17833BCB00CC814E /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCA17833BCB00CC814E /* Phone.m */; };
+		22750FCD17833C8C00CC814E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750FCC17833C8C00CC814E /* CoreData.framework */; };
+		22750FD017833E0900CC814E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCF17833E0900CC814E /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,16 @@
 		22750FAE1783321900CC814E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		22750FB11783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKFirstViewController.xib; sourceTree = "<group>"; };
 		22750FB41783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKSecondViewController.xib; sourceTree = "<group>"; };
+		22750FBC1783377700CC814E /* TestData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestData.xcdatamodel; sourceTree = "<group>"; };
+		22750FC017833BC800CC814E /* Email.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Email.h; sourceTree = "<group>"; };
+		22750FC117833BC800CC814E /* Email.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Email.m; sourceTree = "<group>"; };
+		22750FC617833BCA00CC814E /* Messenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messenger.h; sourceTree = "<group>"; };
+		22750FC717833BCA00CC814E /* Messenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messenger.m; sourceTree = "<group>"; };
+		22750FC917833BCB00CC814E /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
+		22750FCA17833BCB00CC814E /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
+		22750FCC17833C8C00CC814E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		22750FCE17833E0900CC814E /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		22750FCF17833E0900CC814E /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22750FCD17833C8C00CC814E /* CoreData.framework in Frameworks */,
 				22750F8B1783321800CC814E /* UIKit.framework in Frameworks */,
 				22750F8D1783321800CC814E /* Foundation.framework in Frameworks */,
 				22750F8F1783321800CC814E /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +86,7 @@
 		22750F7E1783321800CC814E = {
 			isa = PBXGroup;
 			children = (
+				22750FBB1783377700CC814E /* TestData.xcdatamodeld */,
 				22750F901783321800CC814E /* Test */,
 				22750F891783321800CC814E /* Frameworks */,
 				22750F881783321800CC814E /* Products */,
@@ -86,6 +104,7 @@
 		22750F891783321800CC814E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22750FCC17833C8C00CC814E /* CoreData.framework */,
 				22750F8A1783321800CC814E /* UIKit.framework */,
 				22750F8C1783321800CC814E /* Foundation.framework */,
 				22750F8E1783321800CC814E /* CoreGraphics.framework */,
@@ -96,6 +115,7 @@
 		22750F901783321800CC814E /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				22750FBF1783384900CC814E /* Model */,
 				22750F991783321800CC814E /* TSKAppDelegate.h */,
 				22750F9A1783321900CC814E /* TSKAppDelegate.m */,
 				22750FA21783321900CC814E /* TSKFirstViewController.h */,
@@ -125,6 +145,21 @@
 				22750FA01783321900CC814E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22750FBF1783384900CC814E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22750FC917833BCB00CC814E /* Phone.h */,
+				22750FCA17833BCB00CC814E /* Phone.m */,
+				22750FC617833BCA00CC814E /* Messenger.h */,
+				22750FC717833BCA00CC814E /* Messenger.m */,
+				22750FC017833BC800CC814E /* Email.h */,
+				22750FC117833BC800CC814E /* Email.m */,
+				22750FCE17833E0900CC814E /* Person.h */,
+				22750FCF17833E0900CC814E /* Person.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +238,11 @@
 				22750F9B1783321900CC814E /* TSKAppDelegate.m in Sources */,
 				22750FA41783321900CC814E /* TSKFirstViewController.m in Sources */,
 				22750FAB1783321900CC814E /* TSKSecondViewController.m in Sources */,
+				22750FBD1783377700CC814E /* TestData.xcdatamodeld in Sources */,
+				22750FC217833BC800CC814E /* Email.m in Sources */,
+				22750FC817833BCA00CC814E /* Messenger.m in Sources */,
+				22750FCB17833BCB00CC814E /* Phone.m in Sources */,
+				22750FD017833E0900CC814E /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,8 +373,22 @@
 				22750FBA1783321900CC814E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22750FBB1783377700CC814E /* TestData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22750FBC1783377700CC814E /* TestData.xcdatamodel */,
+			);
+			currentVersion = 22750FBC1783377700CC814E /* TestData.xcdatamodel */;
+			path = TestData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 22750F7F1783321800CC814E /* Project object */;
 }
