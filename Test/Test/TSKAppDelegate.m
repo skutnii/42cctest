@@ -7,12 +7,69 @@
 //
 
 #import "TSKAppDelegate.h"
-
 #import "TSKFirstViewController.h"
-
 #import "TSKSecondViewController.h"
+#import <CoreData/CoreData.h>
+
+@interface TSKAppDelegate ()
+
+-(NSString*)appDocumentsDirectory;
+
+@end
 
 @implementation TSKAppDelegate
+
+@synthesize dataModel = _dataModel;
+@synthesize storeManager = _storeManager;
+@synthesize dataStore = _dataStore;
+
+-(NSManagedObjectModel*)dataModel
+{
+    if (!_dataModel)
+    {
+        _dataModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    }
+    
+    return _dataModel;
+}
+
+-(NSPersistentStoreCoordinator*)storeManager
+{
+    if (!_storeManager)
+    {
+        _storeManager = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.dataModel];
+    }
+    
+    return _storeManager;
+}
+
+-(NSPersistentStore*)dataStore
+{
+    if (!_dataStore)
+    {
+        NSString *docsDir = [self appDocumentsDirectory];
+        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData.sqlite"];
+        NSURL *storeURL = [NSURL fileURLWithPath:storePath];
+        
+        NSPersistentStoreCoordinator *manager = self.storeManager;
+        NSPersistentStore *aStore = [manager persistentStoreForURL:storeURL];
+        if (!aStore)
+        {
+            NSError *err = nil;
+            aStore = [manager
+                      addPersistentStoreWithType:NSSQLiteStoreType configuration:nil
+                      URL:storeURL options:nil error:&err];
+            if (err)
+            {
+                NSLog(@"%@", [err description]);
+            }
+        }
+        
+        _dataStore = aStore;
+    }
+    
+    return _dataStore;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,6 +81,9 @@
     self.tabBarController.viewControllers = @[viewController1, viewController2];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    [self dataStore];
+    
     return YES;
 }
 
@@ -67,5 +127,11 @@
 {
 }
 */
+
+-(NSString*)appDocumentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths lastObject];
+}
 
 @end

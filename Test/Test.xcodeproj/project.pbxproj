@@ -30,6 +30,15 @@
 		22750FCB17833BCB00CC814E /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCA17833BCB00CC814E /* Phone.m */; };
 		22750FCD17833C8C00CC814E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750FCC17833C8C00CC814E /* CoreData.framework */; };
 		22750FD017833E0900CC814E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCF17833E0900CC814E /* Person.m */; };
+		2275101117834ADB00CC814E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2275101017834ADB00CC814E /* SenTestingKit.framework */; };
+		2275101217834ADB00CC814E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8A1783321800CC814E /* UIKit.framework */; };
+		2275101317834ADB00CC814E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8C1783321800CC814E /* Foundation.framework */; };
+		2275101917834ADB00CC814E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2275101717834ADB00CC814E /* InfoPlist.strings */; };
+		2275101C17834ADB00CC814E /* UTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275101B17834ADB00CC814E /* UTest.m */; };
+		2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750F9A1783321900CC814E /* TSKAppDelegate.m */; };
+		2275102217834F5500CC814E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750FCC17833C8C00CC814E /* CoreData.framework */; };
+		2275102317834F6700CC814E /* TSKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKFirstViewController.m */; };
+		2275102417834F6700CC814E /* TSKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FAA1783321900CC814E /* TSKSecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +75,13 @@
 		22750FCC17833C8C00CC814E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		22750FCE17833E0900CC814E /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		22750FCF17833E0900CC814E /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2275100F17834ADA00CC814E /* UTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2275101017834ADB00CC814E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2275101617834ADB00CC814E /* UTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UTest-Info.plist"; sourceTree = "<group>"; };
+		2275101817834ADB00CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2275101A17834ADB00CC814E /* UTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTest.h; sourceTree = "<group>"; };
+		2275101B17834ADB00CC814E /* UTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTest.m; sourceTree = "<group>"; };
+		2275101D17834ADB00CC814E /* UTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UTest-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +96,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2275100B17834ADA00CC814E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2275102217834F5500CC814E /* CoreData.framework in Frameworks */,
+				2275101117834ADB00CC814E /* SenTestingKit.framework in Frameworks */,
+				2275101217834ADB00CC814E /* UIKit.framework in Frameworks */,
+				2275101317834ADB00CC814E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +115,7 @@
 			children = (
 				22750FBB1783377700CC814E /* TestData.xcdatamodeld */,
 				22750F901783321800CC814E /* Test */,
+				2275101417834ADB00CC814E /* UTest */,
 				22750F891783321800CC814E /* Frameworks */,
 				22750F881783321800CC814E /* Products */,
 			);
@@ -97,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				22750F871783321800CC814E /* Test.app */,
+				2275100F17834ADA00CC814E /* UTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +137,7 @@
 				22750F8A1783321800CC814E /* UIKit.framework */,
 				22750F8C1783321800CC814E /* Foundation.framework */,
 				22750F8E1783321800CC814E /* CoreGraphics.framework */,
+				2275101017834ADB00CC814E /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +192,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2275101417834ADB00CC814E /* UTest */ = {
+			isa = PBXGroup;
+			children = (
+				2275101A17834ADB00CC814E /* UTest.h */,
+				2275101B17834ADB00CC814E /* UTest.m */,
+				2275101517834ADB00CC814E /* Supporting Files */,
+			);
+			path = UTest;
+			sourceTree = "<group>";
+		};
+		2275101517834ADB00CC814E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2275101617834ADB00CC814E /* UTest-Info.plist */,
+				2275101717834ADB00CC814E /* InfoPlist.strings */,
+				2275101D17834ADB00CC814E /* UTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +231,24 @@
 			productName = Test;
 			productReference = 22750F871783321800CC814E /* Test.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2275100E17834ADA00CC814E /* UTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2275101E17834ADB00CC814E /* Build configuration list for PBXNativeTarget "UTest" */;
+			buildPhases = (
+				2275100A17834ADA00CC814E /* Sources */,
+				2275100B17834ADA00CC814E /* Frameworks */,
+				2275100C17834ADA00CC814E /* Resources */,
+				2275100D17834ADA00CC814E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UTest;
+			productName = UTest;
+			productReference = 2275100F17834ADA00CC814E /* UTest.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -205,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				22750F861783321800CC814E /* Test */,
+				2275100E17834ADA00CC814E /* UTest */,
 			);
 		};
 /* End PBXProject section */
@@ -227,7 +296,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2275100C17834ADA00CC814E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2275101917834ADB00CC814E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2275100D17834ADA00CC814E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22750F831783321800CC814E /* Sources */ = {
@@ -243,6 +336,17 @@
 				22750FC817833BCA00CC814E /* Messenger.m in Sources */,
 				22750FCB17833BCB00CC814E /* Phone.m in Sources */,
 				22750FD017833E0900CC814E /* Person.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2275100A17834ADA00CC814E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2275101C17834ADB00CC814E /* UTest.m in Sources */,
+				2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */,
+				2275102317834F6700CC814E /* TSKFirstViewController.m in Sources */,
+				2275102417834F6700CC814E /* TSKSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +375,14 @@
 				22750FB41783321900CC814E /* en */,
 			);
 			name = TSKSecondViewController.xib;
+			sourceTree = "<group>";
+		};
+		2275101717834ADB00CC814E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2275101817834ADB00CC814E /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -354,6 +466,36 @@
 			};
 			name = Release;
 		};
+		2275101F17834ADB00CC814E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UTest/UTest-Prefix.pch";
+				INFOPLIST_FILE = "UTest/UTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2275102017834ADB00CC814E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UTest/UTest-Prefix.pch";
+				INFOPLIST_FILE = "UTest/UTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -374,6 +516,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2275101E17834ADB00CC814E /* Build configuration list for PBXNativeTarget "UTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2275101F17834ADB00CC814E /* Debug */,
+				2275102017834ADB00CC814E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

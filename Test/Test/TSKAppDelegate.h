@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface TSKAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) NSManagedObjectModel *dataModel;
+@property (strong, nonatomic) NSPersistentStoreCoordinator *storeManager;
+@property (strong, nonatomic) NSPersistentStore *dataStore;
 
 @end
