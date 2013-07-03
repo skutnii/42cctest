@@ -10,6 +10,12 @@
 #import "TSKFirstViewController.h"
 #import "TSKSecondViewController.h"
 #import <CoreData/CoreData.h>
+#import "Person.h"
+#import "Phone.h"
+#import "Email.h"
+#import "Messenger.h"
+
+#define FIRSTRUN 0
 
 @interface TSKAppDelegate ()
 
@@ -22,6 +28,18 @@
 @synthesize dataModel = _dataModel;
 @synthesize storeManager = _storeManager;
 @synthesize dataStore = _dataStore;
+@synthesize dataContext = _dataContext;
+
+-(NSManagedObjectContext*)dataContext
+{
+    if (!_dataContext)
+    {
+        _dataContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
+        _dataContext.persistentStoreCoordinator = self.storeManager;
+    }
+    
+    return _dataContext;
+}
 
 -(NSManagedObjectModel*)dataModel
 {
@@ -38,6 +56,30 @@
     if (!_storeManager)
     {
         _storeManager = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.dataModel];
+
+        NSString *docsDir = [self appDocumentsDirectory];
+        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData.sqlite"];
+        NSURL *storeURL = [NSURL fileURLWithPath:storePath];
+        
+        NSFileManager *fManager = [NSFileManager defaultManager];
+        if (![fManager fileExistsAtPath:storePath])
+        {
+            NSString *defaultsPath = [[NSBundle mainBundle] pathForResource:@"Default" ofType:@"data"];
+            [fManager copyItemAtPath:defaultsPath toPath:storePath error:NULL];
+        }
+        
+        NSPersistentStore *aStore = [_storeManager persistentStoreForURL:storeURL];
+        if (!aStore)
+        {
+            NSError *err = nil;
+            aStore = [_storeManager
+                      addPersistentStoreWithType:NSSQLiteStoreType configuration:nil
+                      URL:storeURL options:nil error:&err];
+            if (err)
+            {
+                NSLog(@"%@", [err description]);
+            }
+        }
     }
     
     return _storeManager;
@@ -51,24 +93,60 @@
         NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData.sqlite"];
         NSURL *storeURL = [NSURL fileURLWithPath:storePath];
         
-        NSPersistentStoreCoordinator *manager = self.storeManager;
-        NSPersistentStore *aStore = [manager persistentStoreForURL:storeURL];
-        if (!aStore)
-        {
-            NSError *err = nil;
-            aStore = [manager
-                      addPersistentStoreWithType:NSSQLiteStoreType configuration:nil
-                      URL:storeURL options:nil error:&err];
-            if (err)
-            {
-                NSLog(@"%@", [err description]);
-            }
-        }
-        
-        _dataStore = aStore;
+        _dataStore = [self.storeManager persistentStoreForURL:storeURL];
     }
     
     return _dataStore;
+}
+
+-(void)createDefaultData
+{
+    NSManagedObjectContext *objContext = self.dataContext;
+    NSEntityDescription *metaPerson = [NSEntityDescription
+                                       entityForName:@"Person" inManagedObjectContext:objContext];
+    
+    Person *me = [[Person alloc] initWithEntity:metaPerson insertIntoManagedObjectContext:objContext];
+    me.name = @"Sergii";
+    me.surname = @"Kutnii";
+    
+    NSDateComponents *birthComps = [[NSDateComponents alloc] init];
+    birthComps.year = 1985;
+    birthComps.month = 1;
+    birthComps.day = 26;
+    
+    me.birthDate = [[NSCalendar currentCalendar] dateFromComponents:birthComps];
+    me.bio = @"Born. Went to kindergarten then to school. Studied physics in Taras Shevchenko Kiev university. Worked for several outsourcing companies before turning to freelance. Babylon 5 fan.";
+    me.photo = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Me128" ofType:@"jpg"]];
+    
+    NSEntityDescription *metaPhone = [NSEntityDescription entityForName:@"Phone" inManagedObjectContext:objContext];
+    Phone *phone = [[Phone alloc] initWithEntity:metaPhone insertIntoManagedObjectContext:objContext];
+    phone.info = @"Mobile";
+    phone.number = @"+380968882443";
+    
+    me.phones = [NSSet setWithObject:phone];
+    
+    NSEntityDescription *metaEmail = [NSEntityDescription entityForName:@"Email" inManagedObjectContext:objContext];
+    Email *email = [[Email alloc] initWithEntity:metaEmail insertIntoManagedObjectContext:objContext];
+    email.info = @"Main email address";
+    email.address = @"mnkutster@gmail.com";
+    
+    me.emails = [NSSet setWithObject:email];
+    
+    NSEntityDescription *metaMessenger = [NSEntityDescription
+                                          entityForName:@"Messenger" inManagedObjectContext:objContext];
+    
+    Messenger *skype = [[Messenger alloc] initWithEntity:metaMessenger insertIntoManagedObjectContext:objContext];
+    skype.type = @"Skype";
+    skype.nickname = @"skutphys";
+    
+    Messenger *jabber = [[Messenger alloc] initWithEntity:metaMessenger insertIntoManagedObjectContext:objContext];
+    jabber.type = @"Jabber";
+    jabber.nickname = @"skutnii@jabb3r.net";
+    
+    me.messengers = [NSSet setWithObjects:skype, jabber, nil];
+    
+    NSError *err = nil;
+    [objContext save:&err];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -79,10 +157,19 @@
     UIViewController *viewController2 = [[TSKSecondViewController alloc] initWithNibName:@"TSKSecondViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewController2];
+    NSArray *tabItems = self.tabBarController.tabBar.items;
+    UITabBarItem *firstItem = [tabItems objectAtIndex:0];
+    firstItem.title = @"Info";
+    UITabBarItem *secondItem = [tabItems objectAtIndex:1];
+    secondItem.title = @"Contacts";
+    
+    
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
-    [self dataStore];
+#if FIRSTRUN
+    [self createDefaultData];
+#endif
     
     return YES;
 }

@@ -39,6 +39,8 @@
 		2275102217834F5500CC814E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750FCC17833C8C00CC814E /* CoreData.framework */; };
 		2275102317834F6700CC814E /* TSKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKFirstViewController.m */; };
 		2275102417834F6700CC814E /* TSKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FAA1783321900CC814E /* TSKSecondViewController.m */; };
+		2275102617848CF200CC814E /* Me128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2275102517848CF200CC814E /* Me128.jpg */; };
+		227510281784990500CC814E /* Default.data in Resources */ = {isa = PBXBuildFile; fileRef = 227510271784990400CC814E /* Default.data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		2275101A17834ADB00CC814E /* UTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTest.h; sourceTree = "<group>"; };
 		2275101B17834ADB00CC814E /* UTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTest.m; sourceTree = "<group>"; };
 		2275101D17834ADB00CC814E /* UTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UTest-Prefix.pch"; sourceTree = "<group>"; };
+		2275102517848CF200CC814E /* Me128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Me128.jpg; sourceTree = "<group>"; };
+		227510271784990400CC814E /* Default.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 		22750F7E1783321800CC814E = {
 			isa = PBXGroup;
 			children = (
+				227510271784990400CC814E /* Default.data */,
+				2275102517848CF200CC814E /* Me128.jpg */,
 				22750FBB1783377700CC814E /* TestData.xcdatamodeld */,
 				22750F901783321800CC814E /* Test */,
 				2275101417834ADB00CC814E /* UTest */,
@@ -293,6 +299,8 @@
 				22750FAF1783321900CC814E /* second@2x.png in Resources */,
 				22750FB21783321900CC814E /* TSKFirstViewController.xib in Resources */,
 				22750FB51783321900CC814E /* TSKSecondViewController.xib in Resources */,
+				2275102617848CF200CC814E /* Me128.jpg in Resources */,
+				227510281784990500CC814E /* Default.data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

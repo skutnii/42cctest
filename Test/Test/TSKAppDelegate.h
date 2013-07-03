@@ -16,5 +16,6 @@
 @property (strong, nonatomic) NSManagedObjectModel *dataModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *storeManager;
 @property (strong, nonatomic) NSPersistentStore *dataStore;
+@property (strong, nonatomic) NSManagedObjectContext *dataContext;
 
 @end

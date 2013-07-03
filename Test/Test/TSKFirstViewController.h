@@ -10,4 +10,8 @@
 
 @interface TSKFirstViewController : UIViewController
 
+@property(nonatomic, strong) IBOutlet UILabel *nameLabel;
+@property(nonatomic, strong) IBOutlet UIImageView *photoView;
+@property(nonatomic, strong) IBOutlet UITextView *bioView;
+
 @end

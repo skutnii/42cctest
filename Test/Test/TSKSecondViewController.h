@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSKSecondViewController : UIViewController
+@interface TSKSecondViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property(nonatomic, strong) IBOutlet UITableView *contactsView;
 
 @end
