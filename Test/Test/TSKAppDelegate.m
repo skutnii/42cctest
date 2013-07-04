@@ -18,9 +18,13 @@
 
 #define FIRSTRUN 0
 
+static NSString * const kFBAppID = @"195008177329274";
+
 @interface TSKAppDelegate ()
 
 -(NSString*)appDocumentsDirectory;
+
+@property (strong, nonatomic) FBSession *fbSession;
 
 @end
 
@@ -30,6 +34,7 @@
 @synthesize storeManager = _storeManager;
 @synthesize dataStore = _dataStore;
 @synthesize dataContext = _dataContext;
+@synthesize fbSession = _fbSession;
 
 -(NSManagedObjectContext*)dataContext
 {
@@ -150,9 +155,8 @@
     [objContext save:&err];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(void)applicationDidAuthenticate
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[TSKFirstViewController alloc] initWithNibName:@"TSKFirstViewController" bundle:nil];
     UIViewController *viewController2 = [[TSKSecondViewController alloc] initWithNibName:@"TSKSecondViewController" bundle:nil];
@@ -164,15 +168,86 @@
     UITabBarItem *secondItem = [tabItems objectAtIndex:1];
     secondItem.title = @"Contacts";
     
-    
     self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
     
 #if FIRSTRUN
     [self createDefaultData];
 #endif
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self authenticate];
+}
+
+-(void)notifyOnAuthError:(NSError*)err
+{
+   UIAlertView *alert = [[UIAlertView alloc]
+                         initWithTitle:@"Error"
+                         message:[NSString stringWithFormat:@"Login failed with error:\n %@", err.description]
+                         delegate:self
+                         cancelButtonTitle:@"Retry"
+                         otherButtonTitles:nil];
+    [alert show];
+}
+
+-(void)authenticate
+{
+    if (!self.fbSession)
+    {
+        self.fbSession = [[FBSession alloc] initWithAppID:kFBAppID
+                                              permissions:nil urlSchemeSuffix:nil tokenCacheStrategy:nil];
+    }
+    
+    [self.fbSession openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
+               completionHandler:^( FBSession *session,
+                                   FBSessionState status,
+                                   NSError *error){
+                   if (!error)
+                   {
+                       [self applicationDidAuthenticate];
+                   }
+                   else
+                   {
+                       [self notifyOnAuthError:error];
+                   }
+               }];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[UIViewController alloc] init];
+    [self.window makeKeyAndVisible];
+    
+    [self authenticate];
     
     return YES;
+}
+
+-(BOOL)application:(UIApplication *)application
+           openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if (!self.fbSession)
+    {
+        self.fbSession = [[FBSession alloc] initWithAppID:kFBAppID
+                                          permissions:nil urlSchemeSuffix:nil tokenCacheStrategy:nil];
+    }
+    
+    if ([self.fbSession handleOpenURL:url])
+    {
+        if (!self.window)
+        {
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            [self.window makeKeyAndVisible];
+        }
+        
+        [self applicationDidAuthenticate];
+        
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
