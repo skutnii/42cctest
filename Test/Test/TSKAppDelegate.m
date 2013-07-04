@@ -14,6 +14,7 @@
 #import "Phone.h"
 #import "Email.h"
 #import "Messenger.h"
+#import "FacebookSDK.h"
 
 #define FIRSTRUN 0
 
