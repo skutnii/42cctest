@@ -15,12 +15,18 @@
 #import "Email.h"
 #import "Messenger.h"
 #import "FacebookSDK.h"
+#import "TSKRequestException.h"
+#import "TSKLoadQueueManager.h"
+#import "TSKFBAccount.h"
 
 #define FIRSTRUN 0
 
-static NSString * const kFBAppID = @"195008177329274";
+NSString * const kFBAppID = @"195008177329274";
 
 @interface TSKAppDelegate ()
+{
+    TSKFBAccount *_fbAcc;
+}
 
 -(NSString*)appDocumentsDirectory;
 
@@ -35,6 +41,16 @@ static NSString * const kFBAppID = @"195008177329274";
 @synthesize dataStore = _dataStore;
 @synthesize dataContext = _dataContext;
 @synthesize fbSession = _fbSession;
+
+-(TSKFBAccount*)fbAccount
+{
+    if (!_fbAcc)
+    {
+        _fbAcc = [[TSKFBAccount alloc] initWithSession:self.fbSession];
+    }
+    
+    return _fbAcc;
+}
 
 -(NSManagedObjectContext*)dataContext
 {
@@ -64,16 +80,9 @@ static NSString * const kFBAppID = @"195008177329274";
         _storeManager = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.dataModel];
 
         NSString *docsDir = [self appDocumentsDirectory];
-        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData.sqlite"];
+        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData2.sqlite"];
         NSURL *storeURL = [NSURL fileURLWithPath:storePath];
-        
-        NSFileManager *fManager = [NSFileManager defaultManager];
-        if (![fManager fileExistsAtPath:storePath])
-        {
-            NSString *defaultsPath = [[NSBundle mainBundle] pathForResource:@"Default" ofType:@"data"];
-            [fManager copyItemAtPath:defaultsPath toPath:storePath error:NULL];
-        }
-        
+
         NSPersistentStore *aStore = [_storeManager persistentStoreForURL:storeURL];
         if (!aStore)
         {
@@ -96,7 +105,7 @@ static NSString * const kFBAppID = @"195008177329274";
     if (!_dataStore)
     {
         NSString *docsDir = [self appDocumentsDirectory];
-        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData.sqlite"];
+        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData2.sqlite"];
         NSURL *storeURL = [NSURL fileURLWithPath:storePath];
         
         _dataStore = [self.storeManager persistentStoreForURL:storeURL];
@@ -159,14 +168,11 @@ static NSString * const kFBAppID = @"195008177329274";
 {
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[TSKFirstViewController alloc] initWithNibName:@"TSKFirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[TSKSecondViewController alloc] initWithNibName:@"TSKSecondViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[viewController1];
     NSArray *tabItems = self.tabBarController.tabBar.items;
     UITabBarItem *firstItem = [tabItems objectAtIndex:0];
     firstItem.title = @"Info";
-    UITabBarItem *secondItem = [tabItems objectAtIndex:1];
-    secondItem.title = @"Contacts";
     
     self.window.rootViewController = self.tabBarController;
     
@@ -195,21 +201,22 @@ static NSString * const kFBAppID = @"195008177329274";
 {
     if (!self.fbSession)
     {
+        FBSessionTokenCachingStrategy *cache = [[FBSessionTokenCachingStrategy alloc] initWithUserDefaultTokenInformationKeyName:@"FBToken"];
         self.fbSession = [[FBSession alloc] initWithAppID:kFBAppID
-                                              permissions:nil urlSchemeSuffix:nil tokenCacheStrategy:nil];
+                                              permissions:[NSArray arrayWithObjects:@"email", @"user_birthday", nil]urlSchemeSuffix:nil tokenCacheStrategy:cache];
     }
     
     [self.fbSession openWithBehavior:FBSessionLoginBehaviorWithFallbackToWebView
                completionHandler:^( FBSession *session,
                                    FBSessionState status,
                                    NSError *error){
-                   if (!error)
-                   {
-                       [self applicationDidAuthenticate];
-                   }
-                   else
+                   if (error)
                    {
                        [self notifyOnAuthError:error];
+                   }
+                   else if (FBSessionStateOpen == status)
+                   {
+                       [self applicationDidAuthenticate];
                    }
                }];
 }
@@ -295,6 +302,34 @@ static NSString * const kFBAppID = @"195008177329274";
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     return [paths lastObject];
+}
+
+-(void)handleException:(NSException*)exc
+{
+    NSLog(@"%@", exc.reason);
+    
+    if ([exc isKindOfClass:[TSKRequestException class]])
+    {
+        NSError *err = [(TSKRequestException*)exc requestError];
+        
+        if (-1001 == err.code) //Timeout
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Could not connect to server. Please make sure that your device has a working internet connection."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Close"
+                                                  otherButtonTitles:nil];
+            [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+        }
+    }
+}
+
+-(void)logout
+{
+    [self.fbSession closeAndClearTokenInformation];
+    self.fbSession = nil;
+    
+    _fbAcc = nil;
 }
 
 @end

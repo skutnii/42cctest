@@ -14,6 +14,8 @@
 #import "Messenger.h"
 #import <CoreData/CoreData.h>
 #import "TSKAppDelegate.h"
+#import "TSKFBAccount.h"
+#import "TSKLoadQueueManager.h"
 
 @interface TSKFirstViewController ()
 
@@ -27,8 +29,10 @@
 @synthesize dataContext = _dataContext;
 @synthesize nameLabel = _nameLabel;
 @synthesize photoView = _photoView;
-@synthesize bioView = _bioView;
+@synthesize birthdayLabel = _birthdayLabel;
 @synthesize me = _me;
+@synthesize logoutBtn = _logoutBtn;
+@synthesize birthCaption = _birthCaption;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +43,68 @@
     }
     return self;
 }
-							
+
+-(void)updateUI
+{
+    NSLog(@"%@", @"UI update");
+    Person *me = self.me;
+    
+    self.photoView.image = me ? [UIImage imageWithData:me.photo] : nil;
+    self.nameLabel.text = me ? [NSString stringWithFormat:@"%@ %@", me.name, me.surname] : @"";
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, yyyy"];
+    self.birthdayLabel.text = me ? [formatter stringFromDate:me.birthDate] : @"";
+    
+    self.logoutBtn.enabled = (nil != me);
+    self.logoutBtn.hidden = (nil == me);
+    self.birthCaption.hidden = (nil == me);
+    
+    [self.view setNeedsDisplay];
+}
+
+-(void)addFacebookAccount:(id)data
+{
+    NSEntityDescription *personDesc = [NSEntityDescription
+                                       entityForName:@"Person" inManagedObjectContext:self.dataContext];
+    Person *me = [[Person alloc] initWithEntity:personDesc insertIntoManagedObjectContext:self.dataContext];
+    me.name = [data objectForKey:@"first_name"];
+    me.surname = [data objectForKey:@"last_name"];
+    
+    NSDateFormatter *dateParser = [NSDateFormatter new];
+    [dateParser setDateFormat:@"MM/dd/yyyy"];
+    me.birthDate = [dateParser dateFromString:[data objectForKey:@"birthday"]];
+    me.photo = [data objectForKey:@"avatar"];
+    
+    NSEntityDescription *emailDesc = [NSEntityDescription
+                                      entityForName:@"Email" inManagedObjectContext:self.dataContext];
+    Email *email = [[Email alloc] initWithEntity:emailDesc insertIntoManagedObjectContext:self.dataContext];
+    email.address = [data objectForKey:@"email"];
+    email.info = @"Email from Facebook";
+    
+    me.emails = [NSSet setWithObject:email];
+    
+    [self.dataContext save:NULL];
+    
+    self.me = me;
+    [self updateUI];
+}
+
+-(void)getData
+{
+    TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
+    TSKFBAccount *acc = appDelegate.fbAccount;
+    
+    TSKLoadTransaction getMe = [TSKLoadQueueManager exceptionHandleDecoratedTransaction:^{
+            id myData = [acc profile];
+            
+            [self performSelectorOnMainThread:@selector(addFacebookAccount:)
+                                   withObject:myData waitUntilDone:YES];
+    }];
+        
+    [TSKLoadQueueManager scheduleTransaction:getMe];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,19 +119,32 @@
     if (personArray.count)
     {
         self.me = [personArray objectAtIndex:0];
+        [self updateUI];
     }
-    
-    Person *me = self.me;
-    
-    self.photoView.image = [UIImage imageWithData:me.photo];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", me.name, me.surname];
-    self.bioView.text = me.bio;
+    else
+    {
+        [self getData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)logout:(id)sender
+{
+    Person *me = self.me;
+    [me removeAll];
+    self.me = nil;
+    
+    [self.dataContext save:NULL];
+
+    [self updateUI];
+
+    TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
+    [appDelegate performSelector:@selector(logout) withObject:nil afterDelay:0.25];
 }
 
 @end

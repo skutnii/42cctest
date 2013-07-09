@@ -64,6 +64,8 @@
 		22EB9483178B2FE7007407AB /* TSKRequestException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9482178B2FE7007407AB /* TSKRequestException.m */; };
 		22EB9488178B3C48007407AB /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9485178B3C48007407AB /* NSObject+SBJSON.m */; };
 		22EB9489178B3C48007407AB /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9487178B3C48007407AB /* NSString+SBJSON.m */; };
+		22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
+		22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,10 @@
 		22EB9485178B3C48007407AB /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
 		22EB9486178B3C48007407AB /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
 		22EB9487178B3C48007407AB /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		22EB948A178B4654007407AB /* TSKLoadQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKLoadQueueManager.h; sourceTree = "<group>"; };
+		22EB948B178B4655007407AB /* TSKLoadQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKLoadQueueManager.m; sourceTree = "<group>"; };
+		22EB948D178B5605007407AB /* TSKFBAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKFBAccount.h; sourceTree = "<group>"; };
+		22EB948E178B5606007407AB /* TSKFBAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFBAccount.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,10 @@
 				22750F911783321800CC814E /* Supporting Files */,
 				22EB9481178B2FE7007407AB /* TSKRequestException.h */,
 				22EB9482178B2FE7007407AB /* TSKRequestException.m */,
+				22EB948A178B4654007407AB /* TSKLoadQueueManager.h */,
+				22EB948B178B4655007407AB /* TSKLoadQueueManager.m */,
+				22EB948D178B5605007407AB /* TSKFBAccount.h */,
+				22EB948E178B5606007407AB /* TSKFBAccount.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -484,6 +494,8 @@
 				22EB9483178B2FE7007407AB /* TSKRequestException.m in Sources */,
 				22EB9488178B3C48007407AB /* NSObject+SBJSON.m in Sources */,
 				22EB9489178B3C48007407AB /* NSString+SBJSON.m in Sources */,
+				22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */,
+				22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

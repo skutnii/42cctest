@@ -12,6 +12,10 @@
 
 @property(nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property(nonatomic, strong) IBOutlet UIImageView *photoView;
-@property(nonatomic, strong) IBOutlet UITextView *bioView;
+@property(nonatomic, strong) IBOutlet UILabel *birthdayLabel;
+@property(nonatomic, strong) IBOutlet UIButton *logoutBtn;
+@property(nonatomic, strong) IBOutlet UILabel *birthCaption;
+
+-(IBAction)logout:(id)sender;
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+@class TSKFBAccount;
+
 @interface TSKAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -17,5 +19,10 @@
 @property (strong, nonatomic) NSPersistentStoreCoordinator *storeManager;
 @property (strong, nonatomic) NSPersistentStore *dataStore;
 @property (strong, nonatomic) NSManagedObjectContext *dataContext;
+
+@property (nonatomic, readonly) TSKFBAccount *fbAccount;
+
+-(void)handleException:(NSException*)exc;
+-(void)logout;
 
 @end
