@@ -76,7 +76,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -84,10 +84,12 @@
     switch (section)
     {
         case 0:
-            return self.me.phones.count;
+            return 1;
         case 1:
-            return self.me.emails.count;
+            return self.me.phones.count;
         case 2:
+            return self.me.emails.count;
+        case 3:
             return self.me.messengers.count;
         default:
             return 0;
@@ -98,11 +100,11 @@
 {
     switch (section)
     {
-        case 0:
-            return @"Phones";
         case 1:
-            return @"Emails";
+            return @"Phones";
         case 2:
+            return @"Emails";
+        case 3:
             return @"Messengers";
         default:
             return 0;
@@ -119,21 +121,21 @@
     
     switch (indexPath.section)
     {
-        case 0:
+        case 1:
         {
             Phone *phone = [self.phones objectAtIndex:indexPath.row];
             contactCell.textLabel.text = phone.number;
             contactCell.detailTextLabel.text = phone.info;
             break;
         }
-        case 1:
+        case 2:
         {
             Email *email = [self.emails objectAtIndex:indexPath.row];
             contactCell.textLabel.text = email.address;
             contactCell.detailTextLabel.text = email.info;
             break;
         }
-        case 2:
+        case 3:
         {
             Messenger *messenger = [self.messengers objectAtIndex:indexPath.row];
             contactCell.textLabel.text = messenger.nickname;

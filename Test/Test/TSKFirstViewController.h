@@ -13,5 +13,8 @@
 @property(nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property(nonatomic, strong) IBOutlet UIImageView *photoView;
 @property(nonatomic, strong) IBOutlet UITextView *bioView;
+@property(nonatomic, strong) IBOutlet UIView *infoView;
+
+@property(nonatomic, strong) IBOutlet UITableView *contentView;
 
 @end

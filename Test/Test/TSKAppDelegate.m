@@ -154,15 +154,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[TSKFirstViewController alloc] initWithNibName:@"TSKFirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[TSKSecondViewController alloc] initWithNibName:@"TSKSecondViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[viewController1];
     NSArray *tabItems = self.tabBarController.tabBar.items;
     UITabBarItem *firstItem = [tabItems objectAtIndex:0];
     firstItem.title = @"Info";
-    UITabBarItem *secondItem = [tabItems objectAtIndex:1];
-    secondItem.title = @"Contacts";
-    
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
