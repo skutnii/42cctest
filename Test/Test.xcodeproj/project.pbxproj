@@ -16,14 +16,12 @@
 		22750F9D1783321900CC814E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750F9C1783321900CC814E /* Default.png */; };
 		22750F9F1783321900CC814E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750F9E1783321900CC814E /* Default@2x.png */; };
 		22750FA11783321900CC814E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FA01783321900CC814E /* Default-568h@2x.png */; };
-		22750FA41783321900CC814E /* TSKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKFirstViewController.m */; };
+		22750FA41783321900CC814E /* TSKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserViewController.m */; };
 		22750FA61783321900CC814E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FA51783321900CC814E /* first.png */; };
 		22750FA81783321900CC814E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FA71783321900CC814E /* first@2x.png */; };
-		22750FAB1783321900CC814E /* TSKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FAA1783321900CC814E /* TSKSecondViewController.m */; };
 		22750FAD1783321900CC814E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FAC1783321900CC814E /* second.png */; };
 		22750FAF1783321900CC814E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FAE1783321900CC814E /* second@2x.png */; };
-		22750FB21783321900CC814E /* TSKFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB01783321900CC814E /* TSKFirstViewController.xib */; };
-		22750FB51783321900CC814E /* TSKSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB31783321900CC814E /* TSKSecondViewController.xib */; };
+		22750FB21783321900CC814E /* TSKUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB01783321900CC814E /* TSKUserViewController.xib */; };
 		22750FBD1783377700CC814E /* TestData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22750FBB1783377700CC814E /* TestData.xcdatamodeld */; };
 		22750FC217833BC800CC814E /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
 		22750FC817833BCA00CC814E /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
@@ -37,8 +35,7 @@
 		2275101C17834ADB00CC814E /* UTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275101B17834ADB00CC814E /* UTest.m */; };
 		2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750F9A1783321900CC814E /* TSKAppDelegate.m */; };
 		2275102217834F5500CC814E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750FCC17833C8C00CC814E /* CoreData.framework */; };
-		2275102317834F6700CC814E /* TSKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKFirstViewController.m */; };
-		2275102417834F6700CC814E /* TSKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FAA1783321900CC814E /* TSKSecondViewController.m */; };
+		2275102317834F6700CC814E /* TSKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserViewController.m */; };
 		2275102617848CF200CC814E /* Me128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2275102517848CF200CC814E /* Me128.jpg */; };
 		227510281784990500CC814E /* Default.data in Resources */ = {isa = PBXBuildFile; fileRef = 227510271784990400CC814E /* Default.data */; };
 		22EB942B17859B23007407AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942A17859B23007407AB /* FacebookSDK.framework */; };
@@ -82,16 +79,13 @@
 		22750F9C1783321900CC814E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		22750F9E1783321900CC814E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		22750FA01783321900CC814E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		22750FA21783321900CC814E /* TSKFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKFirstViewController.h; sourceTree = "<group>"; };
-		22750FA31783321900CC814E /* TSKFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKFirstViewController.m; sourceTree = "<group>"; };
+		22750FA21783321900CC814E /* TSKUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKUserViewController.h; sourceTree = "<group>"; };
+		22750FA31783321900CC814E /* TSKUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKUserViewController.m; sourceTree = "<group>"; };
 		22750FA51783321900CC814E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		22750FA71783321900CC814E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		22750FA91783321900CC814E /* TSKSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKSecondViewController.h; sourceTree = "<group>"; };
-		22750FAA1783321900CC814E /* TSKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKSecondViewController.m; sourceTree = "<group>"; };
 		22750FAC1783321900CC814E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		22750FAE1783321900CC814E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		22750FB11783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKFirstViewController.xib; sourceTree = "<group>"; };
-		22750FB41783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKSecondViewController.xib; sourceTree = "<group>"; };
+		22750FB11783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKUserViewController.xib; sourceTree = "<group>"; };
 		22750FBC1783377700CC814E /* TestData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestData.xcdatamodel; sourceTree = "<group>"; };
 		22750FC017833BC800CC814E /* Email.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Email.h; sourceTree = "<group>"; };
 		22750FC117833BC800CC814E /* Email.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Email.m; sourceTree = "<group>"; };
@@ -237,16 +231,13 @@
 				22750FBF1783384900CC814E /* Model */,
 				22750F991783321800CC814E /* TSKAppDelegate.h */,
 				22750F9A1783321900CC814E /* TSKAppDelegate.m */,
-				22750FA21783321900CC814E /* TSKFirstViewController.h */,
-				22750FA31783321900CC814E /* TSKFirstViewController.m */,
+				22750FA21783321900CC814E /* TSKUserViewController.h */,
+				22750FA31783321900CC814E /* TSKUserViewController.m */,
 				22750FA51783321900CC814E /* first.png */,
 				22750FA71783321900CC814E /* first@2x.png */,
-				22750FA91783321900CC814E /* TSKSecondViewController.h */,
-				22750FAA1783321900CC814E /* TSKSecondViewController.m */,
 				22750FAC1783321900CC814E /* second.png */,
 				22750FAE1783321900CC814E /* second@2x.png */,
-				22750FB01783321900CC814E /* TSKFirstViewController.xib */,
-				22750FB31783321900CC814E /* TSKSecondViewController.xib */,
+				22750FB01783321900CC814E /* TSKUserViewController.xib */,
 				22750F911783321800CC814E /* Supporting Files */,
 				22EB9481178B2FE7007407AB /* TSKRequestException.h */,
 				22EB9482178B2FE7007407AB /* TSKRequestException.m */,
@@ -431,8 +422,7 @@
 				22750FA81783321900CC814E /* first@2x.png in Resources */,
 				22750FAD1783321900CC814E /* second.png in Resources */,
 				22750FAF1783321900CC814E /* second@2x.png in Resources */,
-				22750FB21783321900CC814E /* TSKFirstViewController.xib in Resources */,
-				22750FB51783321900CC814E /* TSKSecondViewController.xib in Resources */,
+				22750FB21783321900CC814E /* TSKUserViewController.xib in Resources */,
 				2275102617848CF200CC814E /* Me128.jpg in Resources */,
 				227510281784990500CC814E /* Default.data in Resources */,
 			);
@@ -471,8 +461,7 @@
 			files = (
 				22750F971783321800CC814E /* main.m in Sources */,
 				22750F9B1783321900CC814E /* TSKAppDelegate.m in Sources */,
-				22750FA41783321900CC814E /* TSKFirstViewController.m in Sources */,
-				22750FAB1783321900CC814E /* TSKSecondViewController.m in Sources */,
+				22750FA41783321900CC814E /* TSKUserViewController.m in Sources */,
 				22750FBD1783377700CC814E /* TestData.xcdatamodeld in Sources */,
 				22750FC217833BC800CC814E /* Email.m in Sources */,
 				22750FC817833BCA00CC814E /* Messenger.m in Sources */,
@@ -505,8 +494,7 @@
 			files = (
 				2275101C17834ADB00CC814E /* UTest.m in Sources */,
 				2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */,
-				2275102317834F6700CC814E /* TSKFirstViewController.m in Sources */,
-				2275102417834F6700CC814E /* TSKSecondViewController.m in Sources */,
+				2275102317834F6700CC814E /* TSKUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,20 +509,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		22750FB01783321900CC814E /* TSKFirstViewController.xib */ = {
+		22750FB01783321900CC814E /* TSKUserViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				22750FB11783321900CC814E /* en */,
 			);
-			name = TSKFirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		22750FB31783321900CC814E /* TSKSecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22750FB41783321900CC814E /* en */,
-			);
-			name = TSKSecondViewController.xib;
+			name = TSKUserViewController.xib;
 			sourceTree = "<group>";
 		};
 		2275101717834ADB00CC814E /* InfoPlist.strings */ = {

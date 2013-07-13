@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 42coffeecups. All rights reserved.
 //
 
-#import "TSKFirstViewController.h"
+#import "TSKUserViewController.h"
 #import "TSKAppDelegate.h"
 #import "Person.h"
 #import "Phone.h"
@@ -17,14 +17,14 @@
 #import "TSKFBAccount.h"
 #import "TSKLoadQueueManager.h"
 
-@interface TSKFirstViewController ()
+@interface TSKUserViewController ()
 
 @property(nonatomic, strong) NSManagedObjectContext *dataContext;
 @property(nonatomic, strong) Person *me;
 
 @end
 
-@implementation TSKFirstViewController
+@implementation TSKUserViewController
 
 @synthesize dataContext = _dataContext;
 @synthesize nameLabel = _nameLabel;
@@ -145,6 +145,10 @@
 
     TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
     [appDelegate performSelector:@selector(logout) withObject:nil afterDelay:0.25];
+}
+
+-(IBAction)editData:(id)sender
+{
 }
 
 @end

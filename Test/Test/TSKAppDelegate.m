@@ -7,7 +7,7 @@
 //
 
 #import "TSKAppDelegate.h"
-#import "TSKFirstViewController.h"
+#import "TSKUserViewController.h"
 #import "TSKSecondViewController.h"
 #import <CoreData/CoreData.h>
 #import "Person.h"
@@ -167,7 +167,7 @@ NSString * const kFBAppID = @"195008177329274";
 -(void)applicationDidAuthenticate
 {
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[TSKFirstViewController alloc] initWithNibName:@"TSKFirstViewController" bundle:nil];
+    UIViewController *viewController1 = [[TSKUserViewController alloc] initWithNibName:@"TSKFirstViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1];
     NSArray *tabItems = self.tabBarController.tabBar.items;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSKFirstViewController : UIViewController
+@interface TSKUserViewController : UIViewController
 
 @property(nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property(nonatomic, strong) IBOutlet UIImageView *photoView;
@@ -17,5 +17,6 @@
 @property(nonatomic, strong) IBOutlet UILabel *birthCaption;
 
 -(IBAction)logout:(id)sender;
+-(IBAction)editData:(id)sender;
 
 @end
