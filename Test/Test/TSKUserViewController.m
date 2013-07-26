@@ -16,8 +16,9 @@
 #import "TSKAppDelegate.h"
 #import "TSKFBAccount.h"
 #import "TSKLoadQueueManager.h"
+#import "TSKDataEditorViewController.h"
 
-@interface TSKUserViewController ()
+@interface TSKUserViewController ()<TSKDataEditorDelegate>
 
 @property(nonatomic, strong) NSManagedObjectContext *dataContext;
 @property(nonatomic, strong) Person *me;
@@ -149,6 +150,18 @@
 
 -(IBAction)editData:(id)sender
 {
+    TSKDataEditorViewController *editor = [[TSKDataEditorViewController alloc] init];
+    editor.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    editor.user = self.me;
+    editor.dataContext = self.dataContext;
+    editor.delegate = self;
+    
+    [self presentViewController:editor animated:YES completion:NULL];
+}
+
+-(void)dataSaved
+{
+    [self updateUI];
 }
 
 @end

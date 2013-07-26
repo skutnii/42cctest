@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */; };
+		2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */; };
 		22750F8B1783321800CC814E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8A1783321800CC814E /* UIKit.framework */; };
 		22750F8D1783321800CC814E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8C1783321800CC814E /* Foundation.framework */; };
 		22750F8F1783321800CC814E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
@@ -66,6 +68,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKDataEditorViewController.h; sourceTree = "<group>"; };
+		2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKDataEditorViewController.m; sourceTree = "<group>"; };
+		2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSKDataEditorViewController.xib; sourceTree = "<group>"; };
 		22750F871783321800CC814E /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22750F8A1783321800CC814E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22750F8C1783321800CC814E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -245,6 +250,9 @@
 				22EB948B178B4655007407AB /* TSKLoadQueueManager.m */,
 				22EB948D178B5605007407AB /* TSKFBAccount.h */,
 				22EB948E178B5606007407AB /* TSKFBAccount.m */,
+				2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */,
+				2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */,
+				2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -425,6 +433,7 @@
 				22750FB21783321900CC814E /* TSKUserViewController.xib in Resources */,
 				2275102617848CF200CC814E /* Me128.jpg in Resources */,
 				227510281784990500CC814E /* Default.data in Resources */,
+				2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +494,7 @@
 				22EB9489178B3C48007407AB /* NSString+SBJSON.m in Sources */,
 				22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */,
 				22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */,
+				2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
