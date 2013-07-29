@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSKFirstViewController : UIViewController
+@interface TSKAuthorInfoViewController : UIViewController
 
 @property(nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property(nonatomic, strong) IBOutlet UIImageView *photoView;

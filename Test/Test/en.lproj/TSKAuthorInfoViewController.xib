@@ -36,7 +36,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="357078503">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIImageView" id="237939605">
@@ -44,7 +44,6 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 20}, {128, 128}}</string>
 						<reference key="NSSuperview" ref="357078503"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="483052203"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -55,7 +54,6 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{156, 20}, {120, 29}}</string>
 						<reference key="NSSuperview" ref="357078503"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="255779567"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -95,7 +93,6 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{20, 156}, {256, 146}}</string>
 						<reference key="NSSuperview" ref="357078503"/>
-						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -126,8 +123,6 @@ Vmlld0NvbnRyb2xsZXIg4oCUIHNwZWNpZmllZCBpbiB0aGUgYXBwIGRlbGVnYXRlLg</string>
 					</object>
 				</array>
 				<string key="NSFrameSize">{296, 322}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="237939605"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -142,7 +137,7 @@ Vmlld0NvbnRyb2xsZXIg4oCUIHNwZWNpZmllZCBpbiB0aGUgYXBwIGRlbGVnYXRlLg</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="191373211">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUITableView" id="509884436">
@@ -150,7 +145,6 @@ Vmlld0NvbnRyb2xsZXIg4oCUIHNwZWNpZmllZCBpbiB0aGUgYXBwIGRlbGVnYXRlLg</string>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 499}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -170,8 +164,6 @@ Vmlld0NvbnRyb2xsZXIg4oCUIHNwZWNpZmllZCBpbiB0aGUgYXBwIGRlbGVnYXRlLg</string>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 499}}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -666,7 +658,7 @@ Vmlld0NvbnRyb2xsZXIg4oCUIHNwZWNpZmllZCBpbiB0aGUgYXBwIGRlbGVnYXRlLg</string>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">TSKFirstViewController</string>
+				<string key="-1.CustomClassName">TSKAuthorInfoViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -735,43 +727,6 @@ Vmlld0NvbnRyb2xsZXIg4oCUIHNwZWNpZmllZCBpbiB0aGUgYXBwIGRlbGVnYXRlLg</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">TSKFirstViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="bioView">UITextView</string>
-						<string key="contentView">UITableView</string>
-						<string key="infoView">UIView</string>
-						<string key="nameLabel">UILabel</string>
-						<string key="photoView">UIImageView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="bioView">
-							<string key="name">bioView</string>
-							<string key="candidateClassName">UITextView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="contentView">
-							<string key="name">contentView</string>
-							<string key="candidateClassName">UITableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="infoView">
-							<string key="name">infoView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="nameLabel">
-							<string key="name">nameLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="photoView">
-							<string key="name">photoView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/TSKFirstViewController.h</string>
 					</object>
 				</object>
 			</array>

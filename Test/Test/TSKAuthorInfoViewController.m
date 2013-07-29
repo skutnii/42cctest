@@ -1,12 +1,13 @@
 //
-//  TSKSecondViewController.m
+//  TSKFirstViewController.m
 //  Test
 //
 //  Created by Serge Kutny on 7/2/13.
 //  Copyright (c) 2013 42coffeecups. All rights reserved.
 //
 
-#import "TSKSecondViewController.h"
+#import "TSKAuthorInfoViewController.h"
+#import "TSKAppDelegate.h"
 #import "Person.h"
 #import "Phone.h"
 #import "Email.h"
@@ -14,7 +15,7 @@
 #import <CoreData/CoreData.h>
 #import "TSKAppDelegate.h"
 
-@interface TSKSecondViewController ()
+@interface TSKAuthorInfoViewController ()
 
 @property(nonatomic, strong) NSManagedObjectContext *dataContext;
 @property(nonatomic, strong) Person *me;
@@ -24,21 +25,25 @@
 
 @end
 
-@implementation TSKSecondViewController
+@implementation TSKAuthorInfoViewController
 
-@synthesize contactsView = _contactsView;
 @synthesize dataContext = _dataContext;
+@synthesize nameLabel = _nameLabel;
+@synthesize photoView = _photoView;
+@synthesize bioView = _bioView;
 @synthesize me = _me;
 @synthesize phones = _phones;
 @synthesize emails = _emails;
 @synthesize messengers = _messengers;
+@synthesize infoView = _infoView;
+@synthesize contentView = _contentView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Second", @"Second");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        self.title = NSLocalizedString(@"First", @"First");
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }
@@ -46,8 +51,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-
+    
     TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
     self.dataContext = appDelegate.dataContext;
     
@@ -61,9 +65,15 @@
         self.phones = [self.me.phones allObjects];
         self.emails = [self.me.emails allObjects];
         self.messengers = [self.me.messengers allObjects];
-    }
+   }
     
-    [self.contactsView reloadData];
+    Person *me = self.me;
+    
+    self.photoView.image = [UIImage imageWithData:me.photo];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", me.name, me.surname];
+    self.bioView.text = me.bio;
+    
+    [self.contentView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,8 +117,21 @@
         case 3:
             return @"Messengers";
         default:
-            return 0;
+            return nil;
     }
+}
+
+-(CGFloat)infoHeight
+{
+    CGRect bioFrame = self.bioView.frame;
+    NSString *bio = self.me.bio;
+    
+    UIFont *bioFont = self.bioView.font;
+    CGFloat letterSize = bioFont.xHeight * 2;
+    CGFloat bioWidth = bioFrame.size.width;
+    CGFloat bioHeight = letterSize * (bio.length * letterSize / bioWidth);
+    
+    return bioFrame.origin.y + bioHeight + 20;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,6 +144,23 @@
     
     switch (indexPath.section)
     {
+        case 0:
+        {
+            CGRect infoFrame = self.infoView.frame;
+            infoFrame.size.height = [self infoHeight];
+            infoFrame.origin.y = 10;
+            
+            UITableViewCell *infoCell = [tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
+            if (!infoCell)
+            {
+                infoCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                  reuseIdentifier:@"InfoCell"];
+                [infoCell.contentView addSubview:self.infoView];
+                self.infoView.frame = infoFrame;
+            }
+            
+            return infoCell;
+        }
         case 1:
         {
             Phone *phone = [self.phones objectAtIndex:indexPath.row];
@@ -147,6 +187,16 @@
     }
     
     return  contactCell;
+}
+
+-(CGFloat)tableView:(UITableView*)tView heightForRowAtIndexPath:(NSIndexPath*)path
+{
+    if (0 == path.section)
+    {
+        return [self infoHeight] + 20;
+    }
+    
+    return 44;
 }
 
 @end

@@ -7,8 +7,7 @@
 //
 
 #import "TSKAppDelegate.h"
-#import "TSKFirstViewController.h"
-#import "TSKSecondViewController.h"
+#import "TSKAuthorInfoViewController.h"
 #import <CoreData/CoreData.h>
 #import "Person.h"
 #import "Phone.h"
@@ -153,7 +152,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[TSKFirstViewController alloc] initWithNibName:@"TSKFirstViewController" bundle:nil];
+    UIViewController *viewController1 = [[TSKAuthorInfoViewController alloc] init];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1];
     NSArray *tabItems = self.tabBarController.tabBar.items;
