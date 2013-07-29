@@ -72,7 +72,7 @@
     STAssertEquals(infoViewer.photoView.superview, infoViewer.infoView, @"photoView not a subview of infoView");
     
     STAssertTrue([infoViewer.bioView isKindOfClass:[UITextView class]], @"Invalid bioView");
-    STAssertEquals(infoViewer.bioView.superview, infoViewer.infoView, @"ioView not a subview of infoView");
+    STAssertEquals(infoViewer.bioView.superview, infoViewer.infoView, @"bioView not a subview of infoView");
 }
 
 @end
