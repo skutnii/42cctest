@@ -17,33 +17,26 @@
 #import "TSKFBAccount.h"
 #import "TSKLoadQueueManager.h"
 #import "TSKDataEditorViewController.h"
+#import "TSKPersonStore.h"
 
 @interface TSKUserViewController ()<TSKDataEditorDelegate>
 
-@property(nonatomic, strong) NSManagedObjectContext *dataContext;
 @property(nonatomic, strong) Person *me;
+
+@property(nonatomic, strong) TSKPersonStore *userStore;
 
 @end
 
 @implementation TSKUserViewController
 
-@synthesize dataContext = _dataContext;
 @synthesize nameLabel = _nameLabel;
 @synthesize photoView = _photoView;
 @synthesize birthdayLabel = _birthdayLabel;
 @synthesize me = _me;
 @synthesize logoutBtn = _logoutBtn;
 @synthesize birthCaption = _birthCaption;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
-    }
-    return self;
-}
+@synthesize userStore = _userStore;
+@synthesize editButton = _editButton;
 
 -(void)updateUI
 {
@@ -61,14 +54,18 @@
     self.logoutBtn.hidden = (nil == me);
     self.birthCaption.hidden = (nil == me);
     
+    self.editButton.enabled = (nil != me);
+    self.editButton.hidden = (nil == me);
+    
     [self.view setNeedsDisplay];
 }
 
 -(void)addFacebookAccount:(id)data
 {
+    NSManagedObjectContext *dataContext = self.userStore.dataContext;
     NSEntityDescription *personDesc = [NSEntityDescription
-                                       entityForName:@"Person" inManagedObjectContext:self.dataContext];
-    Person *me = [[Person alloc] initWithEntity:personDesc insertIntoManagedObjectContext:self.dataContext];
+                                       entityForName:@"Person" inManagedObjectContext:dataContext];
+    Person *me = [[Person alloc] initWithEntity:personDesc insertIntoManagedObjectContext:dataContext];
     me.name = [data objectForKey:@"first_name"];
     me.surname = [data objectForKey:@"last_name"];
     
@@ -78,14 +75,14 @@
     me.photo = [data objectForKey:@"avatar"];
     
     NSEntityDescription *emailDesc = [NSEntityDescription
-                                      entityForName:@"Email" inManagedObjectContext:self.dataContext];
-    Email *email = [[Email alloc] initWithEntity:emailDesc insertIntoManagedObjectContext:self.dataContext];
+                                      entityForName:@"Email" inManagedObjectContext:dataContext];
+    Email *email = [[Email alloc] initWithEntity:emailDesc insertIntoManagedObjectContext:dataContext];
     email.address = [data objectForKey:@"email"];
     email.info = @"Email from Facebook";
     
     me.emails = [NSSet setWithObject:email];
     
-    [self.dataContext save:NULL];
+    [dataContext save:NULL];
     
     self.me = me;
     [self updateUI];
@@ -110,12 +107,11 @@
 {
     [super viewDidLoad];
     
-    TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
-    self.dataContext = appDelegate.dataContext;
+    self.userStore = [[TSKPersonStore alloc] initWithStoreFileName:@"User.sqlite"];
     
     NSFetchRequest *personGetter = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     NSError *err = nil;
-    NSArray *personArray = [self.dataContext executeFetchRequest:personGetter error:&err];
+    NSArray *personArray = [self.userStore.dataContext executeFetchRequest:personGetter error:&err];
     
     if (personArray.count)
     {
@@ -140,7 +136,7 @@
     [me removeAll];
     self.me = nil;
     
-    [self.dataContext save:NULL];
+    [self.userStore.dataContext save:NULL];
 
     [self updateUI];
 
@@ -153,7 +149,7 @@
     TSKDataEditorViewController *editor = [[TSKDataEditorViewController alloc] init];
     editor.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     editor.user = self.me;
-    editor.dataContext = self.dataContext;
+    editor.dataContext = self.userStore.dataContext;
     editor.delegate = self;
     
     [self presentViewController:editor animated:YES completion:NULL];

@@ -8,6 +8,7 @@
 
 #import "UTest.h"
 #import "TSKAppDelegate.h"
+#import "TSKAuthorInfoViewController.h"
 
 @interface TSKAppDelegate ()
 
@@ -45,15 +46,33 @@
     STAssertNotNil(delegate.dataModel, @"Could not load the application data model");
     STAssertNotNil(delegate.storeManager, @"Could not create persistent store coordinator");
     STAssertNotNil([delegate appDocumentsDirectory], @"No documents directory found");
-    
-//The following fails under testing environment only
-#if 0
     STAssertNotNil(delegate.dataStore, @"Could not load or create data store");
     STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:delegate.dataStore.URL.path],
                  @"Persistent store file missing");
-#endif
     
     NSLog(@"%@", @"Model loading succeeded");
+}
+
+-(void)testAuthorInfoNib
+{
+    TSKAuthorInfoViewController *infoViewer = [[TSKAuthorInfoViewController alloc] init];
+    
+    STAssertTrue([infoViewer.view isKindOfClass:[UIView class]], @"Invalid view object");
+    STAssertTrue([infoViewer.contentView isKindOfClass:[UITableView class]], @"Invalid contentView");
+    STAssertEquals(infoViewer.contentView.superview, infoViewer.view, @"contentView not in view hierarchy");
+    STAssertEquals(infoViewer.contentView.dataSource, infoViewer, @"contentView.dataSource is not set to controller");
+    STAssertEquals(infoViewer.contentView.delegate, infoViewer, @"contentView.delegate is not set to controller");
+    
+    STAssertTrue([infoViewer.infoView isKindOfClass:[UIView class]], @"Invalid infoView object");
+    
+    STAssertTrue([infoViewer.nameLabel isKindOfClass:[UILabel class]], @"Invalid namelabel object");
+    STAssertEquals(infoViewer.nameLabel.superview, infoViewer.infoView, @"nameLabel not a subview of infoView");
+    
+    STAssertTrue([infoViewer.photoView isKindOfClass:[UIImageView class]], @"Invalid photoView");
+    STAssertEquals(infoViewer.photoView.superview, infoViewer.infoView, @"photoView not a subview of infoView");
+    
+    STAssertTrue([infoViewer.bioView isKindOfClass:[UITextView class]], @"Invalid bioView");
+    STAssertEquals(infoViewer.bioView.superview, infoViewer.infoView, @"bioView not a subview of infoView");
 }
 
 @end

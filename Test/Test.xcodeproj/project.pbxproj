@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */; };
 		2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */; };
+		22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */; };
+		22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F2217A719990011EE9A /* TSKPersonStore.m */; };
+		22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */; };
 		22750F8B1783321800CC814E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8A1783321800CC814E /* UIKit.framework */; };
 		22750F8D1783321800CC814E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8C1783321800CC814E /* Foundation.framework */; };
 		22750F8F1783321800CC814E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
@@ -71,6 +74,11 @@
 		2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKDataEditorViewController.h; sourceTree = "<group>"; };
 		2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKDataEditorViewController.m; sourceTree = "<group>"; };
 		2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSKDataEditorViewController.xib; sourceTree = "<group>"; };
+		22625F1E17A7182A0011EE9A /* TSKAuthorInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKAuthorInfoViewController.h; sourceTree = "<group>"; };
+		22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKAuthorInfoViewController.m; sourceTree = "<group>"; };
+		22625F2117A719980011EE9A /* TSKPersonStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKPersonStore.h; sourceTree = "<group>"; };
+		22625F2217A719990011EE9A /* TSKPersonStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKPersonStore.m; sourceTree = "<group>"; };
+		22625F2517A722C70011EE9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKAuthorInfoViewController.xib; sourceTree = "<group>"; };
 		22750F871783321800CC814E /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22750F8A1783321800CC814E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22750F8C1783321800CC814E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +246,9 @@
 				22750F9A1783321900CC814E /* TSKAppDelegate.m */,
 				22750FA21783321900CC814E /* TSKUserViewController.h */,
 				22750FA31783321900CC814E /* TSKUserViewController.m */,
+				22625F1E17A7182A0011EE9A /* TSKAuthorInfoViewController.h */,
+				22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */,
+				22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */,
 				22750FA51783321900CC814E /* first.png */,
 				22750FA71783321900CC814E /* first@2x.png */,
 				22750FAC1783321900CC814E /* second.png */,
@@ -253,6 +264,8 @@
 				2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */,
 				2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */,
 				2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */,
+				22625F2117A719980011EE9A /* TSKPersonStore.h */,
+				22625F2217A719990011EE9A /* TSKPersonStore.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -434,6 +447,7 @@
 				2275102617848CF200CC814E /* Me128.jpg in Resources */,
 				227510281784990500CC814E /* Default.data in Resources */,
 				2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */,
+				22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +509,8 @@
 				22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */,
 				22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */,
 				2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */,
+				22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */,
+				22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +527,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22625F2517A722C70011EE9A /* en */,
+			);
+			name = TSKAuthorInfoViewController.xib;
+			sourceTree = "<group>";
+		};
 		22750F931783321800CC814E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

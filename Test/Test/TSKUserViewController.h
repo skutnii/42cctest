@@ -14,6 +14,7 @@
 @property(nonatomic, strong) IBOutlet UIImageView *photoView;
 @property(nonatomic, strong) IBOutlet UILabel *birthdayLabel;
 @property(nonatomic, strong) IBOutlet UIButton *logoutBtn;
+@property(nonatomic, strong) IBOutlet UIButton *editButton;
 @property(nonatomic, strong) IBOutlet UILabel *birthCaption;
 
 -(IBAction)logout:(id)sender;
