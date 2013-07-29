@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 42coffeecups. All rights reserved.
 //
 
-#import "TSKFirstViewController.h"
+#import "TSKUserInfoViewController.h"
 #import "TSKAppDelegate.h"
 #import "Person.h"
 #import "Phone.h"
@@ -17,14 +17,14 @@
 #import "TSKFBAccount.h"
 #import "TSKLoadQueueManager.h"
 
-@interface TSKFirstViewController ()
+@interface TSKUserInfoViewController ()
 
 @property(nonatomic, strong) NSManagedObjectContext *dataContext;
 @property(nonatomic, strong) Person *me;
 
 @end
 
-@implementation TSKFirstViewController
+@implementation TSKUserInfoViewController
 
 @synthesize dataContext = _dataContext;
 @synthesize nameLabel = _nameLabel;
