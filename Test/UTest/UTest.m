@@ -46,12 +46,9 @@
     STAssertNotNil(delegate.storeManager, @"Could not create persistent store coordinator");
     STAssertNotNil([delegate appDocumentsDirectory], @"No documents directory found");
     
-//The following fails under testing environment only
-#if 0
     STAssertNotNil(delegate.dataStore, @"Could not load or create data store");
     STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:delegate.dataStore.URL.path],
                  @"Persistent store file missing");
-#endif
     
     NSLog(@"%@", @"Model loading succeeded");
 }

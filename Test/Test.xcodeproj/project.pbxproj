@@ -7,6 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22625EF117A70C670011EE9A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942D1785A82C007407AB /* Accounts.framework */; };
+		22625EF217A70C670011EE9A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942F1785A842007407AB /* Social.framework */; };
+		22625EF317A70C7E0011EE9A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94331785A89F007407AB /* Security.framework */; };
+		22625EF417A70C880011EE9A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94351785A90A007407AB /* AdSupport.framework */; };
+		22625EF517A70CB90011EE9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94311785A85C007407AB /* libsqlite3.dylib */; };
+		22625EF717A70CC30011EE9A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22625EF617A70CC30011EE9A /* QuartzCore.framework */; };
+		22625EF917A70D7E0011EE9A /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9485178B3C48007407AB /* NSObject+SBJSON.m */; };
+		22625EFB17A70D7E0011EE9A /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9487178B3C48007407AB /* NSString+SBJSON.m */; };
+		22625EFE17A70D7E0011EE9A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9464178B2DED007407AB /* SBJsonParser.m */; };
+		22625F0017A70D7E0011EE9A /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9466178B2DED007407AB /* SBJsonStreamParser.m */; };
+		22625F0217A70D7E0011EE9A /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9468178B2DED007407AB /* SBJsonStreamParserAccumulator.m */; };
+		22625F0417A70D7E0011EE9A /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB946A178B2DED007407AB /* SBJsonStreamParserAdapter.m */; };
+		22625F0617A70D7E0011EE9A /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB946C178B2DED007407AB /* SBJsonStreamParserState.m */; };
+		22625F0817A70D7E0011EE9A /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB946E178B2DED007407AB /* SBJsonStreamTokeniser.m */; };
+		22625F0A17A70D7E0011EE9A /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9470178B2DED007407AB /* SBJsonStreamWriter.m */; };
+		22625F0C17A70D7E0011EE9A /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9472178B2DED007407AB /* SBJsonStreamWriterAccumulator.m */; };
+		22625F0E17A70D7E0011EE9A /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9474178B2DEE007407AB /* SBJsonStreamWriterState.m */; };
+		22625F1017A70D7E0011EE9A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9476178B2DEE007407AB /* SBJsonWriter.m */; };
+		22625F1117A70D7E0011EE9A /* NSDictionary+URLParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB945F178B2BDC007407AB /* NSDictionary+URLParameters.m */; };
+		22625F1217A70D7E0011EE9A /* SKCallExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9456178B29A3007407AB /* SKCallExecutor.m */; };
+		22625F1317A70D7E0011EE9A /* SKDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9458178B29A3007407AB /* SKDataProcessor.m */; };
+		22625F1417A70D7E0011EE9A /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCA17833BCB00CC814E /* Phone.m */; };
+		22625F1517A70D7E0011EE9A /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
+		22625F1617A70D7E0011EE9A /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
+		22625F1717A70D7E0011EE9A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCF17833E0900CC814E /* Person.m */; };
+		22625F1817A70D7E0011EE9A /* TSKRequestException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9482178B2FE7007407AB /* TSKRequestException.m */; };
+		22625F1917A70D7E0011EE9A /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
+		22625F1A17A70D7E0011EE9A /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
+		22625F1B17A70E070011EE9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
 		22750F8B1783321800CC814E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8A1783321800CC814E /* UIKit.framework */; };
 		22750F8D1783321800CC814E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8C1783321800CC814E /* Foundation.framework */; };
 		22750F8F1783321800CC814E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
@@ -63,7 +92,18 @@
 		22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		22625F1C17A70EF90011EE9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22750F7F1783321800CC814E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22750F861783321800CC814E;
+			remoteInfo = Test;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		22625EF617A70CC30011EE9A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22750F871783321800CC814E /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22750F8A1783321800CC814E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22750F8C1783321800CC814E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +208,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22625F1B17A70E070011EE9A /* CoreGraphics.framework in Frameworks */,
+				22625EF717A70CC30011EE9A /* QuartzCore.framework in Frameworks */,
+				22625EF517A70CB90011EE9A /* libsqlite3.dylib in Frameworks */,
+				22625EF417A70C880011EE9A /* AdSupport.framework in Frameworks */,
+				22625EF317A70C7E0011EE9A /* Security.framework in Frameworks */,
+				22625EF117A70C670011EE9A /* Accounts.framework in Frameworks */,
+				22625EF217A70C670011EE9A /* Social.framework in Frameworks */,
 				22EB942B17859B23007407AB /* FacebookSDK.framework in Frameworks */,
 				2275102217834F5500CC814E /* CoreData.framework in Frameworks */,
 				2275101117834ADB00CC814E /* SenTestingKit.framework in Frameworks */,
@@ -182,6 +229,7 @@
 		22750F7E1783321800CC814E = {
 			isa = PBXGroup;
 			children = (
+				22625EF617A70CC30011EE9A /* QuartzCore.framework */,
 				22EB9461178B2DED007407AB /* SBJSON */,
 				22EB94351785A90A007407AB /* AdSupport.framework */,
 				22EB94331785A89F007407AB /* Security.framework */,
@@ -369,6 +417,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22625F1D17A70EF90011EE9A /* PBXTargetDependency */,
 			);
 			name = UTest;
 			productName = UTest;
@@ -484,6 +533,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22625EF917A70D7E0011EE9A /* NSObject+SBJSON.m in Sources */,
+				22625EFB17A70D7E0011EE9A /* NSString+SBJSON.m in Sources */,
+				22625EFE17A70D7E0011EE9A /* SBJsonParser.m in Sources */,
+				22625F0017A70D7E0011EE9A /* SBJsonStreamParser.m in Sources */,
+				22625F0217A70D7E0011EE9A /* SBJsonStreamParserAccumulator.m in Sources */,
+				22625F0417A70D7E0011EE9A /* SBJsonStreamParserAdapter.m in Sources */,
+				22625F0617A70D7E0011EE9A /* SBJsonStreamParserState.m in Sources */,
+				22625F0817A70D7E0011EE9A /* SBJsonStreamTokeniser.m in Sources */,
+				22625F0A17A70D7E0011EE9A /* SBJsonStreamWriter.m in Sources */,
+				22625F0C17A70D7E0011EE9A /* SBJsonStreamWriterAccumulator.m in Sources */,
+				22625F0E17A70D7E0011EE9A /* SBJsonStreamWriterState.m in Sources */,
+				22625F1017A70D7E0011EE9A /* SBJsonWriter.m in Sources */,
+				22625F1117A70D7E0011EE9A /* NSDictionary+URLParameters.m in Sources */,
+				22625F1217A70D7E0011EE9A /* SKCallExecutor.m in Sources */,
+				22625F1317A70D7E0011EE9A /* SKDataProcessor.m in Sources */,
+				22625F1417A70D7E0011EE9A /* Phone.m in Sources */,
+				22625F1517A70D7E0011EE9A /* Messenger.m in Sources */,
+				22625F1617A70D7E0011EE9A /* Email.m in Sources */,
+				22625F1717A70D7E0011EE9A /* Person.m in Sources */,
+				22625F1817A70D7E0011EE9A /* TSKRequestException.m in Sources */,
+				22625F1917A70D7E0011EE9A /* TSKLoadQueueManager.m in Sources */,
+				22625F1A17A70D7E0011EE9A /* TSKFBAccount.m in Sources */,
 				2275101C17834ADB00CC814E /* UTest.m in Sources */,
 				2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */,
 				2275102317834F6700CC814E /* TSKUserInfoViewController.m in Sources */,
@@ -491,6 +562,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22625F1D17A70EF90011EE9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22750F861783321800CC814E /* Test */;
+			targetProxy = 22625F1C17A70EF90011EE9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22750F931783321800CC814E /* InfoPlist.strings */ = {
@@ -615,6 +694,7 @@
 		2275101F17834ADB00CC814E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Test.app/Test";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -625,6 +705,7 @@
 				GCC_PREFIX_HEADER = "UTest/UTest-Prefix.pch";
 				INFOPLIST_FILE = "UTest/UTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -632,6 +713,7 @@
 		2275102017834ADB00CC814E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Test.app/Test";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -642,6 +724,7 @@
 				GCC_PREFIX_HEADER = "UTest/UTest-Prefix.pch";
 				INFOPLIST_FILE = "UTest/UTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
