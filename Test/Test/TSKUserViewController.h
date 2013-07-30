@@ -19,5 +19,8 @@
 
 -(IBAction)logout:(id)sender;
 -(IBAction)editData:(id)sender;
+-(IBAction)login:(id)sender;
+
+-(void)getDataIfNeeded;
 
 @end

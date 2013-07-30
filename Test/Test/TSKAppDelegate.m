@@ -28,8 +28,6 @@ NSString * const kFBAppID = @"195008177329274";
     TSKFBAccount *_fbAcc;
 }
 
-@property (strong, nonatomic) FBSession *fbSession;
-
 @end
 
 @implementation TSKAppDelegate
@@ -48,14 +46,23 @@ NSString * const kFBAppID = @"195008177329274";
 
 -(void)applicationDidAuthenticate
 {
-    // Override point for customization after application launch.
-    UIViewController *viewController1 = [[TSKUserViewController alloc] init];
-    UIViewController *viewController2 = [[TSKAuthorInfoViewController alloc] init];
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    if (!self.tabBarController)
+    {
+        // Override point for customization after application launch.
+        TSKUserViewController *viewController1 = [[TSKUserViewController alloc] init];
+        TSKAuthorInfoViewController *viewController2 = [[TSKAuthorInfoViewController alloc] init];
+        
+        self.tabBarController = [[UITabBarController alloc] init];
+        self.tabBarController.viewControllers = @[viewController1, viewController2];
+
+        self.window.rootViewController = self.tabBarController;
+    }
+    
+    TSKUserViewController *userController = [self.tabBarController.viewControllers objectAtIndex:0];
+    [userController getDataIfNeeded];
     
     NSArray *tabItems = self.tabBarController.tabBar.items;
-    
+
     UITabBarItem *firstItem = [tabItems objectAtIndex:0];
     firstItem.title = @"User Info";
     firstItem.image = [UIImage imageNamed:@"first.png"];
@@ -83,7 +90,7 @@ NSString * const kFBAppID = @"195008177329274";
 {
    UIAlertView *alert = [[UIAlertView alloc]
                          initWithTitle:@"Error"
-                         message:[NSString stringWithFormat:@"Login failed with error:\n %@", err.description]
+                         message:@"Login failed"
                          delegate:self
                          cancelButtonTitle:@"Retry"
                          otherButtonTitles:nil];
@@ -134,7 +141,7 @@ NSString * const kFBAppID = @"195008177329274";
                                           permissions:nil urlSchemeSuffix:nil tokenCacheStrategy:nil];
     }
     
-    if ([self.fbSession handleOpenURL:url])
+    if ([self.fbSession handleOpenURL:url] && (FBSessionStateOpen == self.fbSession.state))
     {
         if (!self.window)
         {

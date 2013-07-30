@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "FacebookSDK.h"
 
 @class TSKFBAccount;
 
@@ -16,10 +17,12 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
+@property (strong, nonatomic) FBSession *fbSession;
 @property (nonatomic, readonly) TSKFBAccount *fbAccount;
 
 -(void)handleException:(NSException*)exc;
 -(void)logout;
+-(void)authenticate;
 -(NSString*)appDocumentsDirectory;
 
 @end

@@ -20,6 +20,9 @@
 #import "TSKPersonStore.h"
 
 @interface TSKUserViewController ()<TSKDataEditorDelegate>
+{
+    BOOL _isLoading;
+}
 
 @property(nonatomic, strong) Person *me;
 
@@ -50,8 +53,20 @@
     [formatter setDateFormat:@"MMM d, yyyy"];
     self.birthdayLabel.text = me ? [formatter stringFromDate:me.birthDate] : @"";
     
-    self.logoutBtn.enabled = (nil != me);
-    self.logoutBtn.hidden = (nil == me);
+    TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    [self.logoutBtn removeTarget:self action:NULL forControlEvents:UIControlEventTouchUpInside];
+    if (FBSessionStateOpen == appDelegate.fbSession.state)
+    {
+        [self.logoutBtn setTitle:@"Logout" forState:UIControlStateNormal];
+        [self.logoutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else
+    {
+        [self.logoutBtn setTitle:@"Log In" forState:UIControlStateNormal];
+        [self.logoutBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+    }
+
     self.birthCaption.hidden = (nil == me);
     
     self.editButton.enabled = (nil != me);
@@ -86,10 +101,14 @@
     
     self.me = me;
     [self updateUI];
+    
+    _isLoading = NO;
 }
 
 -(void)getData
 {
+    _isLoading = YES;
+    
     TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
     TSKFBAccount *acc = appDelegate.fbAccount;
     
@@ -101,6 +120,20 @@
     }];
         
     [TSKLoadQueueManager scheduleTransaction:getMe];
+}
+
+-(void)getDataIfNeeded
+{
+    if (_isLoading) return;
+    
+    NSFetchRequest *personGetter = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    NSError *err = nil;
+    NSArray *personArray = [self.userStore.dataContext executeFetchRequest:personGetter error:&err];
+    
+    if (!personArray.count)
+    {
+        [self getData];
+    }
 }
 
 - (void)viewDidLoad
@@ -120,7 +153,7 @@
     }
     else
     {
-        [self getData];
+        [self getDataIfNeeded];
     }
 }
 
@@ -138,10 +171,10 @@
     
     [self.userStore.dataContext save:NULL];
 
-    [self updateUI];
-
     TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
-    [appDelegate performSelector:@selector(logout) withObject:nil afterDelay:0.25];
+    [appDelegate logout];
+
+    [self updateUI];
 }
 
 -(IBAction)editData:(id)sender
@@ -153,6 +186,12 @@
     editor.delegate = self;
     
     [self presentViewController:editor animated:YES completion:NULL];
+}
+
+-(IBAction)login:(id)sender
+{
+    TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
+    [appDelegate authenticate];
 }
 
 -(void)dataSaved
