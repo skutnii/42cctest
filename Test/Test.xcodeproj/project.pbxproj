@@ -12,6 +12,8 @@
 		22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */; };
 		22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F2217A719990011EE9A /* TSKPersonStore.m */; };
 		22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */; };
+		22625F2A17A861210011EE9A /* TSKFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F2817A861210011EE9A /* TSKFriendsViewController.m */; };
+		22625F2B17A861210011EE9A /* TSKFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22625F2917A861210011EE9A /* TSKFriendsViewController.xib */; };
 		22750F8B1783321800CC814E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8A1783321800CC814E /* UIKit.framework */; };
 		22750F8D1783321800CC814E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8C1783321800CC814E /* Foundation.framework */; };
 		22750F8F1783321800CC814E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
@@ -79,6 +81,9 @@
 		22625F2117A719980011EE9A /* TSKPersonStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKPersonStore.h; sourceTree = "<group>"; };
 		22625F2217A719990011EE9A /* TSKPersonStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKPersonStore.m; sourceTree = "<group>"; };
 		22625F2517A722C70011EE9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKAuthorInfoViewController.xib; sourceTree = "<group>"; };
+		22625F2717A8611F0011EE9A /* TSKFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKFriendsViewController.h; sourceTree = "<group>"; };
+		22625F2817A861210011EE9A /* TSKFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFriendsViewController.m; sourceTree = "<group>"; };
+		22625F2917A861210011EE9A /* TSKFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSKFriendsViewController.xib; sourceTree = "<group>"; };
 		22750F871783321800CC814E /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22750F8A1783321800CC814E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22750F8C1783321800CC814E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -266,6 +271,9 @@
 				2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */,
 				22625F2117A719980011EE9A /* TSKPersonStore.h */,
 				22625F2217A719990011EE9A /* TSKPersonStore.m */,
+				22625F2717A8611F0011EE9A /* TSKFriendsViewController.h */,
+				22625F2817A861210011EE9A /* TSKFriendsViewController.m */,
+				22625F2917A861210011EE9A /* TSKFriendsViewController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -448,6 +456,7 @@
 				227510281784990500CC814E /* Default.data in Resources */,
 				2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */,
 				22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */,
+				22625F2B17A861210011EE9A /* TSKFriendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +520,7 @@
 				2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */,
 				22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */,
 				22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */,
+				22625F2A17A861210011EE9A /* TSKFriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
