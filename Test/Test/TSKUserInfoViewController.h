@@ -17,5 +17,8 @@
 @property(nonatomic, strong) IBOutlet UILabel *birthCaption;
 
 -(IBAction)logout:(id)sender;
+-(IBAction)login:(id)sender;
+
+-(void)getDataIfNeeded;
 
 @end

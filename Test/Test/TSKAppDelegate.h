@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "FacebookSDK.h"
 
 @class TSKFBAccount;
 
@@ -21,8 +22,10 @@
 @property (strong, nonatomic) NSManagedObjectContext *dataContext;
 
 @property (nonatomic, readonly) TSKFBAccount *fbAccount;
+@property (strong, nonatomic) FBSession *fbSession;
 
 -(void)handleException:(NSException*)exc;
 -(void)logout;
+-(void)authenticate;
 
 @end
