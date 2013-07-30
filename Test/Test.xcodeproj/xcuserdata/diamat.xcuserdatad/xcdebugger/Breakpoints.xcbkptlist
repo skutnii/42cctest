@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Test/TSKAppDelegate.m"
-         timestampString = "396911924.261355"
+         timestampString = "396916336.854829"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "191"
-         endingLineNumber = "191"
+         startingLineNumber = "194"
+         endingLineNumber = "194"
          landmarkName = "@implementation TSKAppDelegate"
          landmarkType = "3">
       </FileBreakpoint>

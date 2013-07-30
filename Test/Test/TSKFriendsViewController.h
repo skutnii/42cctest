@@ -10,4 +10,7 @@
 
 @interface TSKFriendsViewController : UIViewController
 
+@property(nonatomic, strong) IBOutlet UITableView *friendsListView;
+@property(nonatomic, strong) IBOutlet UIActivityIndicatorView *spinner;
+
 @end

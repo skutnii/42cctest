@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "FacebookSDK.h"
 
+extern NSString * const kLoginStateChangeNotification;
+
 @class TSKFBAccount;
 
 @interface TSKAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>

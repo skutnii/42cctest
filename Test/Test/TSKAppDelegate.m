@@ -23,6 +23,7 @@
 #define FIRSTRUN 0
 
 NSString * const kFBAppID = @"195008177329274";
+NSString * const kLoginStateChangeNotification = @"__login_state_change_notification__";
 
 @interface TSKAppDelegate ()
 {
@@ -77,6 +78,8 @@ NSString * const kFBAppID = @"195008177329274";
     thirdItem.image = [UIImage imageNamed:@"second.png"];
     
     self.window.rootViewController = self.tabBarController;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:nil];
     
 #if FIRSTRUN
     [self createDefaultData];
@@ -235,6 +238,8 @@ NSString * const kFBAppID = @"195008177329274";
     self.fbSession = nil;
     
     _fbAcc = nil;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:nil];
 }
 
 @end
