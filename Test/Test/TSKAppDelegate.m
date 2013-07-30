@@ -73,6 +73,9 @@ NSString * const kFBAppID = @"195008177329274";
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+    [self.fbSession closeAndClearTokenInformation];
+    self.fbSession = nil;
+    
     [self authenticate];
 }
 
