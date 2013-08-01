@@ -11,12 +11,16 @@
 #import "TSKFBAccount.h"
 #import "TSKLoadQueueManager.h"
 #import "TSKFriend.h"
+#import "TSKFriendCell.h"
+#import "TSKPriorityEditorViewController.h"
 
 @interface TSKFriendsViewController ()
 
 @property(nonatomic, strong) NSArray *friends;
 
 -(void)getFriends;
+
+-(void)prioritizeFriend:(TSKFriend*)friend;
 
 @end
 
@@ -68,8 +72,24 @@
     [self.spinner startAnimating];
     
     TSKLoadTransaction getFriends = [TSKLoadQueueManager exceptionHandleDecoratedTransaction:^{
+
+        NSSortDescriptor *priorityDesc = [[NSSortDescriptor alloc]
+                                          initWithKey:@"priority" ascending:NO comparator:^(id value1, id value2){
+                                              
+                                              if ([value1 unsignedIntValue] < [value2 unsignedIntValue])
+                                              {
+                                                  return NSOrderedAscending;
+                                              }
+                                              
+                                              if ([value2 unsignedIntValue] < [value1 unsignedIntValue])
+                                              {
+                                                  return NSOrderedDescending;
+                                              }
+                                              
+                                              return NSOrderedSame;
+                                          }];
         
-        self.friends = [acc friends];
+        self.friends = [[acc friends] sortedArrayUsingDescriptors:[NSArray arrayWithObject:priorityDesc]];
         
         [self performSelectorOnMainThread:@selector(didLoadFriends)
                                withObject:nil waitUntilDone:YES];
@@ -112,18 +132,52 @@
 -(UITableViewCell*)tableView:(UITableView*)tView
        cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.friendsListView dequeueReusableCellWithIdentifier:@"Cell"];
+    TSKFriendCell *cell = [self.friendsListView dequeueReusableCellWithIdentifier:@"Cell"];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[TSKFriendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
     TSKFriend *aFriend = [self.friends objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", aFriend.firstName, aFriend.lastName];
     cell.imageView.image = aFriend.cachedAvatar;
+    cell.aFriend = aFriend;
+    cell.owner = self;
     
     return cell;
+}
+
+-(void)prioritizeFriend:(TSKFriend *)friend
+{
+    TSKPriorityEditorViewController *prioritizer = [[TSKPriorityEditorViewController alloc] init];
+    prioritizer.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    prioritizer.aFriend = friend;
+    prioritizer.owner = self;
+    
+    [self presentViewController:prioritizer animated:YES completion:NULL];
+}
+
+-(void)didPrioritizeFriend:(TSKFriend *)friend
+{
+    NSSortDescriptor *priorityDesc = [[NSSortDescriptor alloc]
+                                      initWithKey:@"priority" ascending:NO comparator:^(id value1, id value2){
+                                          
+                                          if ([value1 unsignedIntValue] < [value2 unsignedIntValue])
+                                          {
+                                              return NSOrderedAscending;
+                                          }
+                                          
+                                          if ([value2 unsignedIntValue] < [value1 unsignedIntValue])
+                                          {
+                                              return NSOrderedDescending;
+                                          }
+                                          
+                                          return NSOrderedSame;
+                                      }];
+    
+    self.friends = [self.friends sortedArrayUsingDescriptors:[NSArray arrayWithObject:priorityDesc]];
+    [self.friendsListView reloadData];
 }
 
 @end

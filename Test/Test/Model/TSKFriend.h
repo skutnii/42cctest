@@ -13,8 +13,11 @@
 @property(nonatomic, copy) NSString *firstName;
 @property(nonatomic, copy) NSString *lastName;
 @property(nonatomic, copy) NSString *avatarLink;
+@property(nonatomic, copy) NSString *identity;
 
 @property(nonatomic, readonly) UIImage *cachedAvatar;
+
+@property(nonatomic, assign) NSUInteger priority;
 
 -(void)cacheAvatarData:(NSData*)data;
 

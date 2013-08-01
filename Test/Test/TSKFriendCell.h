@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TSKFriend;
+@class TSKFriendsViewController;
+
 @interface TSKFriendCell : UITableViewCell
 
-@property(nonatomic, strong) NSDictionary *aFriend;
+@property(nonatomic, strong) TSKFriend *aFriend;
+@property(nonatomic, weak) TSKFriendsViewController *owner;
 
 @end

@@ -9,11 +9,14 @@
 #import "TSKFriend.h"
 #import "TSKAppDelegate.h"
 
+static NSString * const kPriorityCacheKey = @"__priority_cache__";
+
 @implementation TSKFriend
 
 @synthesize firstName = _firstName;
 @synthesize lastName = _lastName;
 @synthesize avatarLink = _avatarLink;
+@synthesize identity = _identity;
 
 -(NSString*)cachePath
 {
@@ -62,9 +65,37 @@
         self.firstName = [entry objectForKey:@"first_name"];
         self.lastName = [entry objectForKey:@"last_name"];
         self.avatarLink = [[[entry objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+        self.identity = [entry objectForKey:@"id"];
     }
     
     return self;
+}
+
+-(NSUInteger)priority
+{
+    NSDictionary *pCache = [[NSUserDefaults standardUserDefaults] objectForKey:kPriorityCacheKey];
+    return [[pCache objectForKey:self.identity] unsignedIntValue];
+}
+
+-(void)setPriority:(NSUInteger)priority
+{
+    NSNumber *pValue = [NSNumber numberWithUnsignedInt:priority];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *pCache = [defaults objectForKey:kPriorityCacheKey];
+    if (!pCache)
+    {
+        pCache = [NSDictionary dictionaryWithObject:pValue forKey:self.identity];
+    }
+    else
+    {
+        NSMutableDictionary *newPCache = [NSMutableDictionary dictionaryWithDictionary:pCache];
+        [newPCache setObject:pValue forKey:self.identity];
+        pCache = newPCache;
+    }
+    
+    [defaults setObject:pCache forKey:kPriorityCacheKey];
+    [defaults synchronize];
 }
 
 @end

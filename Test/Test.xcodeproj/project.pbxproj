@@ -93,6 +93,8 @@
 		22F8D47D17AAF708002D5238 /* shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8D47C17AAF708002D5238 /* shuffle.png */; };
 		22F8D48017AAF7D5002D5238 /* TSKFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F8D47F17AAF7D5002D5238 /* TSKFriendCell.m */; };
 		22F8D48317AAF9BF002D5238 /* TSKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F8D48217AAF9BF002D5238 /* TSKFriend.m */; };
+		22F8D48717AB0B3C002D5238 /* TSKPriorityEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F8D48517AB0B39002D5238 /* TSKPriorityEditorViewController.m */; };
+		22F8D48817AB0B3C002D5238 /* TSKPriorityEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8D48617AB0B3A002D5238 /* TSKPriorityEditorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +207,9 @@
 		22F8D47F17AAF7D5002D5238 /* TSKFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFriendCell.m; sourceTree = "<group>"; };
 		22F8D48117AAF9BF002D5238 /* TSKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKFriend.h; sourceTree = "<group>"; };
 		22F8D48217AAF9BF002D5238 /* TSKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFriend.m; sourceTree = "<group>"; };
+		22F8D48417AB0B37002D5238 /* TSKPriorityEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKPriorityEditorViewController.h; sourceTree = "<group>"; };
+		22F8D48517AB0B39002D5238 /* TSKPriorityEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKPriorityEditorViewController.m; sourceTree = "<group>"; };
+		22F8D48617AB0B3A002D5238 /* TSKPriorityEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSKPriorityEditorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +329,9 @@
 				22625F2917A861210011EE9A /* TSKFriendsViewController.xib */,
 				22F8D47E17AAF7D5002D5238 /* TSKFriendCell.h */,
 				22F8D47F17AAF7D5002D5238 /* TSKFriendCell.m */,
+				22F8D48417AB0B37002D5238 /* TSKPriorityEditorViewController.h */,
+				22F8D48517AB0B39002D5238 /* TSKPriorityEditorViewController.m */,
+				22F8D48617AB0B3A002D5238 /* TSKPriorityEditorViewController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -511,6 +519,7 @@
 				22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */,
 				22625F2B17A861210011EE9A /* TSKFriendsViewController.xib in Resources */,
 				22F8D47D17AAF708002D5238 /* shuffle.png in Resources */,
+				22F8D48817AB0B3C002D5238 /* TSKPriorityEditorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +586,7 @@
 				22625F2A17A861210011EE9A /* TSKFriendsViewController.m in Sources */,
 				22F8D48017AAF7D5002D5238 /* TSKFriendCell.m in Sources */,
 				22F8D48317AAF9BF002D5238 /* TSKFriend.m in Sources */,
+				22F8D48717AB0B3C002D5238 /* TSKPriorityEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
