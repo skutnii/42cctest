@@ -103,9 +103,15 @@
 -(BOOL)textField:(UITextField *)textField
     shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    BOOL stringValid = [self isValidString:string];
+    if (!stringValid)
+    {
+        string = @"";
+    }
+    
     [self validateSaveForTextField:textField shouldChangeCharactersInRange:range replacementString:string];
     
-    return [self isValidString:string];
+    return stringValid;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -18,4 +18,7 @@
 
 -(id)initWithStoreFileName:(NSString*)fileName;
 
++(TSKPersonStore*)authorStore;
++(TSKPersonStore*)userStore;
+
 @end

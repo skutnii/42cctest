@@ -95,4 +95,24 @@
     return self;
 }
 
++(TSKPersonStore*)authorStore
+{
+    NSString *storeName = @"Author.sqlite";
+    NSString *docsDir = [(TSKAppDelegate*)[UIApplication sharedApplication].delegate appDocumentsDirectory];
+    NSString *storePath = [docsDir stringByAppendingPathComponent:storeName];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:storePath])
+    {
+        [[NSFileManager defaultManager]
+         copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"Default" ofType:@"data"]
+         toPath:storePath error:NULL];
+    }
+    
+    return [[self alloc] initWithStoreFileName:storeName];
+}
+
++(TSKPersonStore*)userStore
+{
+    return [[TSKPersonStore alloc] initWithStoreFileName:@"User.sqlite"];
+}
+
 @end
