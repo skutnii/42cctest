@@ -90,6 +90,9 @@
 		22EB9489178B3C48007407AB /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9487178B3C48007407AB /* NSString+SBJSON.m */; };
 		22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
 		22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
+		22F8D47D17AAF708002D5238 /* shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8D47C17AAF708002D5238 /* shuffle.png */; };
+		22F8D48017AAF7D5002D5238 /* TSKFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F8D47F17AAF7D5002D5238 /* TSKFriendCell.m */; };
+		22F8D48317AAF9BF002D5238 /* TSKFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F8D48217AAF9BF002D5238 /* TSKFriend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +200,11 @@
 		22EB948B178B4655007407AB /* TSKLoadQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKLoadQueueManager.m; sourceTree = "<group>"; };
 		22EB948D178B5605007407AB /* TSKFBAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKFBAccount.h; sourceTree = "<group>"; };
 		22EB948E178B5606007407AB /* TSKFBAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFBAccount.m; sourceTree = "<group>"; };
+		22F8D47C17AAF708002D5238 /* shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuffle.png; sourceTree = "<group>"; };
+		22F8D47E17AAF7D5002D5238 /* TSKFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKFriendCell.h; sourceTree = "<group>"; };
+		22F8D47F17AAF7D5002D5238 /* TSKFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFriendCell.m; sourceTree = "<group>"; };
+		22F8D48117AAF9BF002D5238 /* TSKFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKFriend.h; sourceTree = "<group>"; };
+		22F8D48217AAF9BF002D5238 /* TSKFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKFriend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +250,7 @@
 		22750F7E1783321800CC814E = {
 			isa = PBXGroup;
 			children = (
+				22F8D47C17AAF708002D5238 /* shuffle.png */,
 				22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */,
 				22EB9461178B2DED007407AB /* SBJSON */,
 				22EB94351785A90A007407AB /* AdSupport.framework */,
@@ -313,6 +322,8 @@
 				22625F2717A8611F0011EE9A /* TSKFriendsViewController.h */,
 				22625F2817A861210011EE9A /* TSKFriendsViewController.m */,
 				22625F2917A861210011EE9A /* TSKFriendsViewController.xib */,
+				22F8D47E17AAF7D5002D5238 /* TSKFriendCell.h */,
+				22F8D47F17AAF7D5002D5238 /* TSKFriendCell.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -342,6 +353,8 @@
 				22750FC117833BC800CC814E /* Email.m */,
 				22750FCE17833E0900CC814E /* Person.h */,
 				22750FCF17833E0900CC814E /* Person.m */,
+				22F8D48117AAF9BF002D5238 /* TSKFriend.h */,
+				22F8D48217AAF9BF002D5238 /* TSKFriend.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +510,7 @@
 				2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */,
 				22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */,
 				22625F2B17A861210011EE9A /* TSKFriendsViewController.xib in Resources */,
+				22F8D47D17AAF708002D5238 /* shuffle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +575,8 @@
 				22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */,
 				22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */,
 				22625F2A17A861210011EE9A /* TSKFriendsViewController.m in Sources */,
+				22F8D48017AAF7D5002D5238 /* TSKFriendCell.m in Sources */,
+				22F8D48317AAF9BF002D5238 /* TSKFriend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
