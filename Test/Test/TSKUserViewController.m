@@ -140,7 +140,7 @@
 {
     [super viewDidLoad];
     
-    self.userStore = [[TSKPersonStore alloc] initWithStoreFileName:@"User.sqlite"];
+    self.userStore = [TSKPersonStore userStore];
     
     NSFetchRequest *personGetter = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     NSError *err = nil;

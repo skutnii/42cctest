@@ -93,17 +93,7 @@
 {
     [super viewDidLoad];
 
-    NSString *storeName = @"Author.sqlite";
-    NSString *docsDir = [(TSKAppDelegate*)[UIApplication sharedApplication].delegate appDocumentsDirectory];
-    NSString *storePath = [docsDir stringByAppendingPathComponent:storeName];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:storePath])
-    {
-        [[NSFileManager defaultManager]
-         copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"Default" ofType:@"data"]
-         toPath:storePath error:NULL];
-    }
-    
-    self.authorStore = [[TSKPersonStore alloc] initWithStoreFileName:storeName];
+    self.authorStore = [TSKPersonStore authorStore];
     
     NSFetchRequest *personGetter = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     NSError *err = nil;

@@ -45,6 +45,26 @@
 		2275102317834F6700CC814E /* TSKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserViewController.m */; };
 		2275102617848CF200CC814E /* Me128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2275102517848CF200CC814E /* Me128.jpg */; };
 		227510281784990500CC814E /* Default.data in Resources */ = {isa = PBXBuildFile; fileRef = 227510271784990400CC814E /* Default.data */; };
+		22D974F417AAD90D0024FDF6 /* TSKDataEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */; };
+		22D974F517AAD90D0024FDF6 /* TSKPersonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F2217A719990011EE9A /* TSKPersonStore.m */; };
+		22D974F617AADEAD0024FDF6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942D1785A82C007407AB /* Accounts.framework */; };
+		22D974F717AADEAD0024FDF6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94351785A90A007407AB /* AdSupport.framework */; };
+		22D974F817AADEB90024FDF6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942F1785A842007407AB /* Social.framework */; };
+		22D974F917AADEDC0024FDF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
+		22D974FB17AADEDC0024FDF6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */; };
+		22D974FC17AADF050024FDF6 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCA17833BCB00CC814E /* Phone.m */; };
+		22D974FD17AADF050024FDF6 /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
+		22D974FE17AADF050024FDF6 /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
+		22D974FF17AADF050024FDF6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCF17833E0900CC814E /* Person.m */; };
+		22D9750017AADF300024FDF6 /* NSDictionary+URLParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB945F178B2BDC007407AB /* NSDictionary+URLParameters.m */; };
+		22D9750117AADF300024FDF6 /* SKCallExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9456178B29A3007407AB /* SKCallExecutor.m */; };
+		22D9750217AADF300024FDF6 /* SKDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9458178B29A3007407AB /* SKDataProcessor.m */; };
+		22D9750317AADF300024FDF6 /* TSKAuthorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */; };
+		22D9750417AADF300024FDF6 /* TSKRequestException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9482178B2FE7007407AB /* TSKRequestException.m */; };
+		22D9750517AADF300024FDF6 /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
+		22D9750617AADF300024FDF6 /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
+		22D9750717AADF4A0024FDF6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94331785A89F007407AB /* Security.framework */; };
+		22D9750817AADF5E0024FDF6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94311785A85C007407AB /* libsqlite3.dylib */; };
 		22EB942B17859B23007407AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942A17859B23007407AB /* FacebookSDK.framework */; };
 		22EB942C1785A808007407AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942A17859B23007407AB /* FacebookSDK.framework */; };
 		22EB942E1785A82C007407AB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942D1785A82C007407AB /* Accounts.framework */; };
@@ -71,6 +91,16 @@
 		22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
 		22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22D9750917AAE06C0024FDF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22750F7F1783321800CC814E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22750F861783321800CC814E;
+			remoteInfo = Test;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKDataEditorViewController.h; sourceTree = "<group>"; };
@@ -123,6 +153,7 @@
 		2275101D17834ADB00CC814E /* UTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UTest-Prefix.pch"; sourceTree = "<group>"; };
 		2275102517848CF200CC814E /* Me128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Me128.jpg; sourceTree = "<group>"; };
 		227510271784990400CC814E /* Default.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.data; sourceTree = "<group>"; };
+		22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22EB942A17859B23007407AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		22EB942D1785A82C007407AB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		22EB942F1785A842007407AB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -190,6 +221,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D9750817AADF5E0024FDF6 /* libsqlite3.dylib in Frameworks */,
+				22D9750717AADF4A0024FDF6 /* Security.framework in Frameworks */,
+				22D974FB17AADEDC0024FDF6 /* QuartzCore.framework in Frameworks */,
+				22D974F917AADEDC0024FDF6 /* CoreGraphics.framework in Frameworks */,
+				22D974F817AADEB90024FDF6 /* Social.framework in Frameworks */,
+				22D974F617AADEAD0024FDF6 /* Accounts.framework in Frameworks */,
+				22D974F717AADEAD0024FDF6 /* AdSupport.framework in Frameworks */,
 				22EB942B17859B23007407AB /* FacebookSDK.framework in Frameworks */,
 				2275102217834F5500CC814E /* CoreData.framework in Frameworks */,
 				2275101117834ADB00CC814E /* SenTestingKit.framework in Frameworks */,
@@ -204,6 +242,7 @@
 		22750F7E1783321800CC814E = {
 			isa = PBXGroup;
 			children = (
+				22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */,
 				22EB9461178B2DED007407AB /* SBJSON */,
 				22EB94351785A90A007407AB /* AdSupport.framework */,
 				22EB94331785A89F007407AB /* Security.framework */,
@@ -404,6 +443,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22D9750A17AAE06C0024FDF6 /* PBXTargetDependency */,
 			);
 			name = UTest;
 			productName = UTest;
@@ -528,6 +568,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D9750017AADF300024FDF6 /* NSDictionary+URLParameters.m in Sources */,
+				22D9750117AADF300024FDF6 /* SKCallExecutor.m in Sources */,
+				22D9750217AADF300024FDF6 /* SKDataProcessor.m in Sources */,
+				22D9750317AADF300024FDF6 /* TSKAuthorInfoViewController.m in Sources */,
+				22D9750417AADF300024FDF6 /* TSKRequestException.m in Sources */,
+				22D9750517AADF300024FDF6 /* TSKLoadQueueManager.m in Sources */,
+				22D9750617AADF300024FDF6 /* TSKFBAccount.m in Sources */,
+				22D974FC17AADF050024FDF6 /* Phone.m in Sources */,
+				22D974FD17AADF050024FDF6 /* Messenger.m in Sources */,
+				22D974FE17AADF050024FDF6 /* Email.m in Sources */,
+				22D974FF17AADF050024FDF6 /* Person.m in Sources */,
+				22D974F417AAD90D0024FDF6 /* TSKDataEditorViewController.m in Sources */,
+				22D974F517AAD90D0024FDF6 /* TSKPersonStore.m in Sources */,
 				2275101C17834ADB00CC814E /* UTest.m in Sources */,
 				2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */,
 				2275102317834F6700CC814E /* TSKUserViewController.m in Sources */,
@@ -535,6 +588,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22D9750A17AAE06C0024FDF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22750F861783321800CC814E /* Test */;
+			targetProxy = 22D9750917AAE06C0024FDF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */ = {
@@ -667,6 +728,7 @@
 		2275101F17834ADB00CC814E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Test.app/Test";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -677,6 +739,7 @@
 				GCC_PREFIX_HEADER = "UTest/UTest-Prefix.pch";
 				INFOPLIST_FILE = "UTest/UTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -684,6 +747,7 @@
 		2275102017834ADB00CC814E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Test.app/Test";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -694,6 +758,7 @@
 				GCC_PREFIX_HEADER = "UTest/UTest-Prefix.pch";
 				INFOPLIST_FILE = "UTest/UTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

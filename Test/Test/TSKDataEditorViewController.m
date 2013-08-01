@@ -43,8 +43,6 @@
     
     self.firstNameInput.text = self.user.name;
     self.lastNameInput.text = self.user.surname;
-    
-    [self validateSaveForTextField:nil shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,8 +72,8 @@
 -(BOOL)isValidString:(NSString*)string
 {
     NSCharacterSet *illegal = [NSCharacterSet
-                               characterSetWithCharactersInString:@"0123456789.±!@#$%^&*()_+-`\[]{}|\";:,/~<>"];
-    return (string.length > 0) && (NSNotFound == [string rangeOfCharacterFromSet:illegal].location);
+                               characterSetWithCharactersInString:@" 0123456789.±!@#$%^&*()_+-`\[]{}|\";:,/~<>?"];
+    return (NSNotFound == [string rangeOfCharacterFromSet:illegal].location);
 }
 
 -(void)validateSaveForTextField:(UITextField*)textField
@@ -85,18 +83,18 @@
     
     if (textField != self.firstNameInput)
     {
-        enableSave = enableSave && [self isValidString:self.firstNameInput.text];
+        enableSave = enableSave && (self.firstNameInput.text.length > 0);
     }
     
     if (textField != self.lastNameInput)
     {
-        enableSave = enableSave && [self isValidString:self.lastNameInput.text];
+        enableSave = enableSave && (self.lastNameInput.text.length > 0);
     }
     
     if (textField)
     {
         NSString *newText = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        enableSave = enableSave && [self isValidString:newText];
+        enableSave = enableSave && (newText.length > 0);
     }
     
     self.saveButton.enabled = enableSave;
@@ -105,9 +103,15 @@
 -(BOOL)textField:(UITextField *)textField
     shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    BOOL stringValid = [self isValidString:string];
+    if (!stringValid)
+    {
+        string = @"";
+    }
+    
     [self validateSaveForTextField:textField shouldChangeCharactersInRange:range replacementString:string];
     
-    return YES;
+    return stringValid;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
