@@ -171,4 +171,14 @@
     return cell;
 }
 
+-(BOOL)tableView:(UITableView*)tView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *data = [self.friends objectAtIndex:indexPath.row];
+    
+    NSURL *friendURL = [NSURL URLWithString:[data objectForKey:@"link"]];
+    [[UIApplication sharedApplication] openURL:friendURL];
+    
+    return NO;
+}
+
 @end

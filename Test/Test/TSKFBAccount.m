@@ -65,7 +65,7 @@ extern NSString * const kFBAppID;
 -(NSArray*)friends
 {
     FBRequest *friendsGetter = [FBRequest requestForGraphPath:@"me/friends"];
-    [friendsGetter.parameters setObject:@"id,name,picture" forKey:@"fields"];
+    [friendsGetter.parameters setObject:@"id,name,picture,link" forKey:@"fields"];
     friendsGetter.session = self.session;
     
     NSDictionary *data = [self dataForFBRequest:friendsGetter];
