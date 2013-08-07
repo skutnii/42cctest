@@ -7,35 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22625EF117A70C670011EE9A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942D1785A82C007407AB /* Accounts.framework */; };
-		22625EF217A70C670011EE9A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942F1785A842007407AB /* Social.framework */; };
-		22625EF317A70C7E0011EE9A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94331785A89F007407AB /* Security.framework */; };
-		22625EF417A70C880011EE9A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94351785A90A007407AB /* AdSupport.framework */; };
-		22625EF517A70CB90011EE9A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94311785A85C007407AB /* libsqlite3.dylib */; };
-		22625EF717A70CC30011EE9A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22625EF617A70CC30011EE9A /* QuartzCore.framework */; };
-		22625EF917A70D7E0011EE9A /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9485178B3C48007407AB /* NSObject+SBJSON.m */; };
-		22625EFB17A70D7E0011EE9A /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9487178B3C48007407AB /* NSString+SBJSON.m */; };
-		22625EFE17A70D7E0011EE9A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9464178B2DED007407AB /* SBJsonParser.m */; };
-		22625F0017A70D7E0011EE9A /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9466178B2DED007407AB /* SBJsonStreamParser.m */; };
-		22625F0217A70D7E0011EE9A /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9468178B2DED007407AB /* SBJsonStreamParserAccumulator.m */; };
-		22625F0417A70D7E0011EE9A /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB946A178B2DED007407AB /* SBJsonStreamParserAdapter.m */; };
-		22625F0617A70D7E0011EE9A /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB946C178B2DED007407AB /* SBJsonStreamParserState.m */; };
-		22625F0817A70D7E0011EE9A /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB946E178B2DED007407AB /* SBJsonStreamTokeniser.m */; };
-		22625F0A17A70D7E0011EE9A /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9470178B2DED007407AB /* SBJsonStreamWriter.m */; };
-		22625F0C17A70D7E0011EE9A /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9472178B2DED007407AB /* SBJsonStreamWriterAccumulator.m */; };
-		22625F0E17A70D7E0011EE9A /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9474178B2DEE007407AB /* SBJsonStreamWriterState.m */; };
-		22625F1017A70D7E0011EE9A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9476178B2DEE007407AB /* SBJsonWriter.m */; };
-		22625F1117A70D7E0011EE9A /* NSDictionary+URLParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB945F178B2BDC007407AB /* NSDictionary+URLParameters.m */; };
-		22625F1217A70D7E0011EE9A /* SKCallExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9456178B29A3007407AB /* SKCallExecutor.m */; };
-		22625F1317A70D7E0011EE9A /* SKDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9458178B29A3007407AB /* SKDataProcessor.m */; };
-		22625F1417A70D7E0011EE9A /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCA17833BCB00CC814E /* Phone.m */; };
-		22625F1517A70D7E0011EE9A /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
-		22625F1617A70D7E0011EE9A /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
-		22625F1717A70D7E0011EE9A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCF17833E0900CC814E /* Person.m */; };
-		22625F1817A70D7E0011EE9A /* TSKRequestException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9482178B2FE7007407AB /* TSKRequestException.m */; };
-		22625F1917A70D7E0011EE9A /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
-		22625F1A17A70D7E0011EE9A /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
-		22625F1B17A70E070011EE9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
+		2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */; };
+		2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */; };
+		22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */; };
+		22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F2217A719990011EE9A /* TSKPersonStore.m */; };
+		22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */; };
 		22750F8B1783321800CC814E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8A1783321800CC814E /* UIKit.framework */; };
 		22750F8D1783321800CC814E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8C1783321800CC814E /* Foundation.framework */; };
 		22750F8F1783321800CC814E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
@@ -45,10 +21,12 @@
 		22750F9D1783321900CC814E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750F9C1783321900CC814E /* Default.png */; };
 		22750F9F1783321900CC814E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750F9E1783321900CC814E /* Default@2x.png */; };
 		22750FA11783321900CC814E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FA01783321900CC814E /* Default-568h@2x.png */; };
-		22750FA41783321900CC814E /* TSKUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserInfoViewController.m */; };
+		22750FA41783321900CC814E /* TSKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserViewController.m */; };
 		22750FA61783321900CC814E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FA51783321900CC814E /* first.png */; };
 		22750FA81783321900CC814E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FA71783321900CC814E /* first@2x.png */; };
-		22750FB21783321900CC814E /* TSKUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB01783321900CC814E /* TSKUserInfoViewController.xib */; };
+		22750FAD1783321900CC814E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FAC1783321900CC814E /* second.png */; };
+		22750FAF1783321900CC814E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22750FAE1783321900CC814E /* second@2x.png */; };
+		22750FB21783321900CC814E /* TSKUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22750FB01783321900CC814E /* TSKUserViewController.xib */; };
 		22750FBD1783377700CC814E /* TestData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22750FBB1783377700CC814E /* TestData.xcdatamodeld */; };
 		22750FC217833BC800CC814E /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
 		22750FC817833BCA00CC814E /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
@@ -62,9 +40,29 @@
 		2275101C17834ADB00CC814E /* UTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275101B17834ADB00CC814E /* UTest.m */; };
 		2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750F9A1783321900CC814E /* TSKAppDelegate.m */; };
 		2275102217834F5500CC814E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750FCC17833C8C00CC814E /* CoreData.framework */; };
-		2275102317834F6700CC814E /* TSKUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserInfoViewController.m */; };
+		2275102317834F6700CC814E /* TSKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FA31783321900CC814E /* TSKUserViewController.m */; };
 		2275102617848CF200CC814E /* Me128.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2275102517848CF200CC814E /* Me128.jpg */; };
 		227510281784990500CC814E /* Default.data in Resources */ = {isa = PBXBuildFile; fileRef = 227510271784990400CC814E /* Default.data */; };
+		22D974F417AAD90D0024FDF6 /* TSKDataEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */; };
+		22D974F517AAD90D0024FDF6 /* TSKPersonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F2217A719990011EE9A /* TSKPersonStore.m */; };
+		22D974F617AADEAD0024FDF6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942D1785A82C007407AB /* Accounts.framework */; };
+		22D974F717AADEAD0024FDF6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94351785A90A007407AB /* AdSupport.framework */; };
+		22D974F817AADEB90024FDF6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942F1785A842007407AB /* Social.framework */; };
+		22D974F917AADEDC0024FDF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22750F8E1783321800CC814E /* CoreGraphics.framework */; };
+		22D974FB17AADEDC0024FDF6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */; };
+		22D974FC17AADF050024FDF6 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCA17833BCB00CC814E /* Phone.m */; };
+		22D974FD17AADF050024FDF6 /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC717833BCA00CC814E /* Messenger.m */; };
+		22D974FE17AADF050024FDF6 /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FC117833BC800CC814E /* Email.m */; };
+		22D974FF17AADF050024FDF6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 22750FCF17833E0900CC814E /* Person.m */; };
+		22D9750017AADF300024FDF6 /* NSDictionary+URLParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB945F178B2BDC007407AB /* NSDictionary+URLParameters.m */; };
+		22D9750117AADF300024FDF6 /* SKCallExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9456178B29A3007407AB /* SKCallExecutor.m */; };
+		22D9750217AADF300024FDF6 /* SKDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9458178B29A3007407AB /* SKDataProcessor.m */; };
+		22D9750317AADF300024FDF6 /* TSKAuthorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */; };
+		22D9750417AADF300024FDF6 /* TSKRequestException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB9482178B2FE7007407AB /* TSKRequestException.m */; };
+		22D9750517AADF300024FDF6 /* TSKLoadQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948B178B4655007407AB /* TSKLoadQueueManager.m */; };
+		22D9750617AADF300024FDF6 /* TSKFBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB948E178B5606007407AB /* TSKFBAccount.m */; };
+		22D9750717AADF4A0024FDF6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94331785A89F007407AB /* Security.framework */; };
+		22D9750817AADF5E0024FDF6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB94311785A85C007407AB /* libsqlite3.dylib */; };
 		22EB942B17859B23007407AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942A17859B23007407AB /* FacebookSDK.framework */; };
 		22EB942C1785A808007407AB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942A17859B23007407AB /* FacebookSDK.framework */; };
 		22EB942E1785A82C007407AB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EB942D1785A82C007407AB /* Accounts.framework */; };
@@ -93,7 +91,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22625F1C17A70EF90011EE9A /* PBXContainerItemProxy */ = {
+		22D9750917AAE06C0024FDF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22750F7F1783321800CC814E /* Project object */;
 			proxyType = 1;
@@ -103,7 +101,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22625EF617A70CC30011EE9A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKDataEditorViewController.h; sourceTree = "<group>"; };
+		2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKDataEditorViewController.m; sourceTree = "<group>"; };
+		2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSKDataEditorViewController.xib; sourceTree = "<group>"; };
+		22625F1E17A7182A0011EE9A /* TSKAuthorInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKAuthorInfoViewController.h; sourceTree = "<group>"; };
+		22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKAuthorInfoViewController.m; sourceTree = "<group>"; };
+		22625F2117A719980011EE9A /* TSKPersonStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSKPersonStore.h; sourceTree = "<group>"; };
+		22625F2217A719990011EE9A /* TSKPersonStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSKPersonStore.m; sourceTree = "<group>"; };
+		22625F2517A722C70011EE9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKAuthorInfoViewController.xib; sourceTree = "<group>"; };
 		22750F871783321800CC814E /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22750F8A1783321800CC814E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22750F8C1783321800CC814E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,11 +122,13 @@
 		22750F9C1783321900CC814E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		22750F9E1783321900CC814E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		22750FA01783321900CC814E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		22750FA21783321900CC814E /* TSKUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKUserInfoViewController.h; sourceTree = "<group>"; };
-		22750FA31783321900CC814E /* TSKUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKUserInfoViewController.m; sourceTree = "<group>"; };
+		22750FA21783321900CC814E /* TSKUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKUserViewController.h; sourceTree = "<group>"; };
+		22750FA31783321900CC814E /* TSKUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKUserViewController.m; sourceTree = "<group>"; };
 		22750FA51783321900CC814E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		22750FA71783321900CC814E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		22750FB11783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKUserInfoViewController.xib; sourceTree = "<group>"; };
+		22750FAC1783321900CC814E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		22750FAE1783321900CC814E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		22750FB11783321900CC814E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TSKUserViewController.xib; sourceTree = "<group>"; };
 		22750FBC1783377700CC814E /* TestData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestData.xcdatamodel; sourceTree = "<group>"; };
 		22750FC017833BC800CC814E /* Email.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Email.h; sourceTree = "<group>"; };
 		22750FC117833BC800CC814E /* Email.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Email.m; sourceTree = "<group>"; };
@@ -141,6 +148,7 @@
 		2275101D17834ADB00CC814E /* UTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UTest-Prefix.pch"; sourceTree = "<group>"; };
 		2275102517848CF200CC814E /* Me128.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Me128.jpg; sourceTree = "<group>"; };
 		227510271784990400CC814E /* Default.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.data; sourceTree = "<group>"; };
+		22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22EB942A17859B23007407AB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		22EB942D1785A82C007407AB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		22EB942F1785A842007407AB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -208,13 +216,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22625F1B17A70E070011EE9A /* CoreGraphics.framework in Frameworks */,
-				22625EF717A70CC30011EE9A /* QuartzCore.framework in Frameworks */,
-				22625EF517A70CB90011EE9A /* libsqlite3.dylib in Frameworks */,
-				22625EF417A70C880011EE9A /* AdSupport.framework in Frameworks */,
-				22625EF317A70C7E0011EE9A /* Security.framework in Frameworks */,
-				22625EF117A70C670011EE9A /* Accounts.framework in Frameworks */,
-				22625EF217A70C670011EE9A /* Social.framework in Frameworks */,
+				22D9750817AADF5E0024FDF6 /* libsqlite3.dylib in Frameworks */,
+				22D9750717AADF4A0024FDF6 /* Security.framework in Frameworks */,
+				22D974FB17AADEDC0024FDF6 /* QuartzCore.framework in Frameworks */,
+				22D974F917AADEDC0024FDF6 /* CoreGraphics.framework in Frameworks */,
+				22D974F817AADEB90024FDF6 /* Social.framework in Frameworks */,
+				22D974F617AADEAD0024FDF6 /* Accounts.framework in Frameworks */,
+				22D974F717AADEAD0024FDF6 /* AdSupport.framework in Frameworks */,
 				22EB942B17859B23007407AB /* FacebookSDK.framework in Frameworks */,
 				2275102217834F5500CC814E /* CoreData.framework in Frameworks */,
 				2275101117834ADB00CC814E /* SenTestingKit.framework in Frameworks */,
@@ -229,7 +237,7 @@
 		22750F7E1783321800CC814E = {
 			isa = PBXGroup;
 			children = (
-				22625EF617A70CC30011EE9A /* QuartzCore.framework */,
+				22D974FA17AADEDC0024FDF6 /* QuartzCore.framework */,
 				22EB9461178B2DED007407AB /* SBJSON */,
 				22EB94351785A90A007407AB /* AdSupport.framework */,
 				22EB94331785A89F007407AB /* Security.framework */,
@@ -275,11 +283,16 @@
 				22750FBF1783384900CC814E /* Model */,
 				22750F991783321800CC814E /* TSKAppDelegate.h */,
 				22750F9A1783321900CC814E /* TSKAppDelegate.m */,
-				22750FA21783321900CC814E /* TSKUserInfoViewController.h */,
-				22750FA31783321900CC814E /* TSKUserInfoViewController.m */,
+				22750FA21783321900CC814E /* TSKUserViewController.h */,
+				22750FA31783321900CC814E /* TSKUserViewController.m */,
+				22625F1E17A7182A0011EE9A /* TSKAuthorInfoViewController.h */,
+				22625F1F17A7182A0011EE9A /* TSKAuthorInfoViewController.m */,
+				22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */,
 				22750FA51783321900CC814E /* first.png */,
 				22750FA71783321900CC814E /* first@2x.png */,
-				22750FB01783321900CC814E /* TSKUserInfoViewController.xib */,
+				22750FAC1783321900CC814E /* second.png */,
+				22750FAE1783321900CC814E /* second@2x.png */,
+				22750FB01783321900CC814E /* TSKUserViewController.xib */,
 				22750F911783321800CC814E /* Supporting Files */,
 				22EB9481178B2FE7007407AB /* TSKRequestException.h */,
 				22EB9482178B2FE7007407AB /* TSKRequestException.m */,
@@ -287,6 +300,11 @@
 				22EB948B178B4655007407AB /* TSKLoadQueueManager.m */,
 				22EB948D178B5605007407AB /* TSKFBAccount.h */,
 				22EB948E178B5606007407AB /* TSKFBAccount.m */,
+				2209BB8317917DD8003F87C3 /* TSKDataEditorViewController.h */,
+				2209BB8417917DD8003F87C3 /* TSKDataEditorViewController.m */,
+				2209BB8517917DD8003F87C3 /* TSKDataEditorViewController.xib */,
+				22625F2117A719980011EE9A /* TSKPersonStore.h */,
+				22625F2217A719990011EE9A /* TSKPersonStore.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -417,7 +435,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				22625F1D17A70EF90011EE9A /* PBXTargetDependency */,
+				22D9750A17AAE06C0024FDF6 /* PBXTargetDependency */,
 			);
 			name = UTest;
 			productName = UTest;
@@ -463,9 +481,13 @@
 				22750FA11783321900CC814E /* Default-568h@2x.png in Resources */,
 				22750FA61783321900CC814E /* first.png in Resources */,
 				22750FA81783321900CC814E /* first@2x.png in Resources */,
-				22750FB21783321900CC814E /* TSKUserInfoViewController.xib in Resources */,
+				22750FAD1783321900CC814E /* second.png in Resources */,
+				22750FAF1783321900CC814E /* second@2x.png in Resources */,
+				22750FB21783321900CC814E /* TSKUserViewController.xib in Resources */,
 				2275102617848CF200CC814E /* Me128.jpg in Resources */,
 				227510281784990500CC814E /* Default.data in Resources */,
+				2209BB8717917DD8003F87C3 /* TSKDataEditorViewController.xib in Resources */,
+				22625F2617A722C70011EE9A /* TSKAuthorInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +524,7 @@
 			files = (
 				22750F971783321800CC814E /* main.m in Sources */,
 				22750F9B1783321900CC814E /* TSKAppDelegate.m in Sources */,
-				22750FA41783321900CC814E /* TSKUserInfoViewController.m in Sources */,
+				22750FA41783321900CC814E /* TSKUserViewController.m in Sources */,
 				22750FBD1783377700CC814E /* TestData.xcdatamodeld in Sources */,
 				22750FC217833BC800CC814E /* Email.m in Sources */,
 				22750FC817833BCA00CC814E /* Messenger.m in Sources */,
@@ -526,6 +548,9 @@
 				22EB9489178B3C48007407AB /* NSString+SBJSON.m in Sources */,
 				22EB948C178B4655007407AB /* TSKLoadQueueManager.m in Sources */,
 				22EB948F178B5606007407AB /* TSKFBAccount.m in Sources */,
+				2209BB8617917DD8003F87C3 /* TSKDataEditorViewController.m in Sources */,
+				22625F2017A7182A0011EE9A /* TSKAuthorInfoViewController.m in Sources */,
+				22625F2317A719990011EE9A /* TSKPersonStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,45 +558,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22625EF917A70D7E0011EE9A /* NSObject+SBJSON.m in Sources */,
-				22625EFB17A70D7E0011EE9A /* NSString+SBJSON.m in Sources */,
-				22625EFE17A70D7E0011EE9A /* SBJsonParser.m in Sources */,
-				22625F0017A70D7E0011EE9A /* SBJsonStreamParser.m in Sources */,
-				22625F0217A70D7E0011EE9A /* SBJsonStreamParserAccumulator.m in Sources */,
-				22625F0417A70D7E0011EE9A /* SBJsonStreamParserAdapter.m in Sources */,
-				22625F0617A70D7E0011EE9A /* SBJsonStreamParserState.m in Sources */,
-				22625F0817A70D7E0011EE9A /* SBJsonStreamTokeniser.m in Sources */,
-				22625F0A17A70D7E0011EE9A /* SBJsonStreamWriter.m in Sources */,
-				22625F0C17A70D7E0011EE9A /* SBJsonStreamWriterAccumulator.m in Sources */,
-				22625F0E17A70D7E0011EE9A /* SBJsonStreamWriterState.m in Sources */,
-				22625F1017A70D7E0011EE9A /* SBJsonWriter.m in Sources */,
-				22625F1117A70D7E0011EE9A /* NSDictionary+URLParameters.m in Sources */,
-				22625F1217A70D7E0011EE9A /* SKCallExecutor.m in Sources */,
-				22625F1317A70D7E0011EE9A /* SKDataProcessor.m in Sources */,
-				22625F1417A70D7E0011EE9A /* Phone.m in Sources */,
-				22625F1517A70D7E0011EE9A /* Messenger.m in Sources */,
-				22625F1617A70D7E0011EE9A /* Email.m in Sources */,
-				22625F1717A70D7E0011EE9A /* Person.m in Sources */,
-				22625F1817A70D7E0011EE9A /* TSKRequestException.m in Sources */,
-				22625F1917A70D7E0011EE9A /* TSKLoadQueueManager.m in Sources */,
-				22625F1A17A70D7E0011EE9A /* TSKFBAccount.m in Sources */,
+				22D9750017AADF300024FDF6 /* NSDictionary+URLParameters.m in Sources */,
+				22D9750117AADF300024FDF6 /* SKCallExecutor.m in Sources */,
+				22D9750217AADF300024FDF6 /* SKDataProcessor.m in Sources */,
+				22D9750317AADF300024FDF6 /* TSKAuthorInfoViewController.m in Sources */,
+				22D9750417AADF300024FDF6 /* TSKRequestException.m in Sources */,
+				22D9750517AADF300024FDF6 /* TSKLoadQueueManager.m in Sources */,
+				22D9750617AADF300024FDF6 /* TSKFBAccount.m in Sources */,
+				22D974FC17AADF050024FDF6 /* Phone.m in Sources */,
+				22D974FD17AADF050024FDF6 /* Messenger.m in Sources */,
+				22D974FE17AADF050024FDF6 /* Email.m in Sources */,
+				22D974FF17AADF050024FDF6 /* Person.m in Sources */,
+				22D974F417AAD90D0024FDF6 /* TSKDataEditorViewController.m in Sources */,
+				22D974F517AAD90D0024FDF6 /* TSKPersonStore.m in Sources */,
 				2275101C17834ADB00CC814E /* UTest.m in Sources */,
 				2275102117834F0F00CC814E /* TSKAppDelegate.m in Sources */,
-				2275102317834F6700CC814E /* TSKUserInfoViewController.m in Sources */,
+				2275102317834F6700CC814E /* TSKUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22625F1D17A70EF90011EE9A /* PBXTargetDependency */ = {
+		22D9750A17AAE06C0024FDF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22750F861783321800CC814E /* Test */;
-			targetProxy = 22625F1C17A70EF90011EE9A /* PBXContainerItemProxy */;
+			targetProxy = 22D9750917AAE06C0024FDF6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22625F2417A722C60011EE9A /* TSKAuthorInfoViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22625F2517A722C70011EE9A /* en */,
+			);
+			name = TSKAuthorInfoViewController.xib;
+			sourceTree = "<group>";
+		};
 		22750F931783321800CC814E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -580,12 +604,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		22750FB01783321900CC814E /* TSKUserInfoViewController.xib */ = {
+		22750FB01783321900CC814E /* TSKUserViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				22750FB11783321900CC814E /* en */,
 			);
-			name = TSKUserInfoViewController.xib;
+			name = TSKUserViewController.xib;
 			sourceTree = "<group>";
 		};
 		2275101717834ADB00CC814E /* InfoPlist.strings */ = {

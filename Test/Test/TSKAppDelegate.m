@@ -7,7 +7,8 @@
 //
 
 #import "TSKAppDelegate.h"
-#import "TSKUserInfoViewController.h"
+#import "TSKUserViewController.h"
+#import "TSKAuthorInfoViewController.h"
 #import <CoreData/CoreData.h>
 #import "Person.h"
 #import "Phone.h"
@@ -27,16 +28,10 @@ NSString * const kFBAppID = @"195008177329274";
     TSKFBAccount *_fbAcc;
 }
 
--(NSString*)appDocumentsDirectory;
-
 @end
 
 @implementation TSKAppDelegate
 
-@synthesize dataModel = _dataModel;
-@synthesize storeManager = _storeManager;
-@synthesize dataStore = _dataStore;
-@synthesize dataContext = _dataContext;
 @synthesize fbSession = _fbSession;
 
 -(TSKFBAccount*)fbAccount
@@ -49,135 +44,34 @@ NSString * const kFBAppID = @"195008177329274";
     return _fbAcc;
 }
 
--(NSManagedObjectContext*)dataContext
-{
-    if (!_dataContext)
-    {
-        _dataContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
-        _dataContext.persistentStoreCoordinator = self.storeManager;
-    }
-    
-    return _dataContext;
-}
-
--(NSManagedObjectModel*)dataModel
-{
-    if (!_dataModel)
-    {
-        _dataModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-    }
-    
-    return _dataModel;
-}
-
--(NSPersistentStoreCoordinator*)storeManager
-{
-    if (!_storeManager)
-    {
-        _storeManager = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.dataModel];
-
-        NSString *docsDir = [self appDocumentsDirectory];
-        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData2.sqlite"];
-        NSURL *storeURL = [NSURL fileURLWithPath:storePath];
-
-        NSPersistentStore *aStore = [_storeManager persistentStoreForURL:storeURL];
-        if (!aStore)
-        {
-            NSError *err = nil;
-            aStore = [_storeManager
-                      addPersistentStoreWithType:NSSQLiteStoreType configuration:nil
-                      URL:storeURL options:nil error:&err];
-            if (err)
-            {
-                NSLog(@"%@", [err description]);
-            }
-        }
-    }
-    
-    return _storeManager;
-}
-
--(NSPersistentStore*)dataStore
-{
-    if (!_dataStore)
-    {
-        NSString *docsDir = [self appDocumentsDirectory];
-        NSString *storePath = [docsDir stringByAppendingPathComponent:@"TestData2.sqlite"];
-        NSURL *storeURL = [NSURL fileURLWithPath:storePath];
-        
-        _dataStore = [self.storeManager persistentStoreForURL:storeURL];
-    }
-    
-    return _dataStore;
-}
-
--(void)createDefaultData
-{
-    NSManagedObjectContext *objContext = self.dataContext;
-    NSEntityDescription *metaPerson = [NSEntityDescription
-                                       entityForName:@"Person" inManagedObjectContext:objContext];
-    
-    Person *me = [[Person alloc] initWithEntity:metaPerson insertIntoManagedObjectContext:objContext];
-    me.name = @"Sergii";
-    me.surname = @"Kutnii";
-    
-    NSDateComponents *birthComps = [[NSDateComponents alloc] init];
-    birthComps.year = 1985;
-    birthComps.month = 1;
-    birthComps.day = 26;
-    
-    me.birthDate = [[NSCalendar currentCalendar] dateFromComponents:birthComps];
-    me.bio = @"Born. Went to kindergarten then to school. Studied physics in Taras Shevchenko Kiev university. Worked for several outsourcing companies before turning to freelance. Babylon 5 fan.";
-    me.photo = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Me128" ofType:@"jpg"]];
-    
-    NSEntityDescription *metaPhone = [NSEntityDescription entityForName:@"Phone" inManagedObjectContext:objContext];
-    Phone *phone = [[Phone alloc] initWithEntity:metaPhone insertIntoManagedObjectContext:objContext];
-    phone.info = @"Mobile";
-    phone.number = @"+380968882443";
-    
-    me.phones = [NSSet setWithObject:phone];
-    
-    NSEntityDescription *metaEmail = [NSEntityDescription entityForName:@"Email" inManagedObjectContext:objContext];
-    Email *email = [[Email alloc] initWithEntity:metaEmail insertIntoManagedObjectContext:objContext];
-    email.info = @"Main email address";
-    email.address = @"mnkutster@gmail.com";
-    
-    me.emails = [NSSet setWithObject:email];
-    
-    NSEntityDescription *metaMessenger = [NSEntityDescription
-                                          entityForName:@"Messenger" inManagedObjectContext:objContext];
-    
-    Messenger *skype = [[Messenger alloc] initWithEntity:metaMessenger insertIntoManagedObjectContext:objContext];
-    skype.type = @"Skype";
-    skype.nickname = @"skutphys";
-    
-    Messenger *jabber = [[Messenger alloc] initWithEntity:metaMessenger insertIntoManagedObjectContext:objContext];
-    jabber.type = @"Jabber";
-    jabber.nickname = @"skutnii@jabb3r.net";
-    
-    me.messengers = [NSSet setWithObjects:skype, jabber, nil];
-    
-    NSError *err = nil;
-    [objContext save:&err];
-}
-
 -(void)applicationDidAuthenticate
 {
     if (!self.tabBarController)
     {
         // Override point for customization after application launch.
-        TSKUserInfoViewController *viewController1 = [[TSKUserInfoViewController alloc] init];
+        TSKUserViewController *viewController1 = [[TSKUserViewController alloc] init];
+        TSKAuthorInfoViewController *viewController2 = [[TSKAuthorInfoViewController alloc] init];
         
         self.tabBarController = [[UITabBarController alloc] init];
-        self.tabBarController.viewControllers = @[viewController1];
-        NSArray *tabItems = self.tabBarController.tabBar.items;
-        UITabBarItem *firstItem = [tabItems objectAtIndex:0];
-        firstItem.title = @"Info";
+        self.tabBarController.viewControllers = @[viewController1, viewController2];
+
         self.window.rootViewController = self.tabBarController;
     }
     
-    TSKUserInfoViewController *userController = [self.tabBarController.viewControllers objectAtIndex:0];
+    TSKUserViewController *userController = [self.tabBarController.viewControllers objectAtIndex:0];
     [userController getDataIfNeeded];
+    
+    NSArray *tabItems = self.tabBarController.tabBar.items;
+
+    UITabBarItem *firstItem = [tabItems objectAtIndex:0];
+    firstItem.title = @"User Info";
+    firstItem.image = [UIImage imageNamed:@"first.png"];
+    
+    UITabBarItem *secondItem = [tabItems objectAtIndex:1];
+    secondItem.title = @"About";
+    secondItem.image = [UIImage imageNamed:@"second.png"];
+    
+    self.window.rootViewController = self.tabBarController;
     
 #if FIRSTRUN
     [self createDefaultData];

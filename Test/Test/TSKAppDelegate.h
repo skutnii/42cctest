@@ -16,16 +16,13 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;
-@property (strong, nonatomic) NSManagedObjectModel *dataModel;
-@property (strong, nonatomic) NSPersistentStoreCoordinator *storeManager;
-@property (strong, nonatomic) NSPersistentStore *dataStore;
-@property (strong, nonatomic) NSManagedObjectContext *dataContext;
 
-@property (nonatomic, readonly) TSKFBAccount *fbAccount;
 @property (strong, nonatomic) FBSession *fbSession;
+@property (nonatomic, readonly) TSKFBAccount *fbAccount;
 
 -(void)handleException:(NSException*)exc;
 -(void)logout;
 -(void)authenticate;
+-(NSString*)appDocumentsDirectory;
 
 @end
