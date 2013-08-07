@@ -180,4 +180,13 @@
     [self.friendsListView reloadData];
 }
 
+-(BOOL)tableView:(UITableView*)tView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TSKFriend *aFriend = [self.friends objectAtIndex:indexPath.row];
+    NSURL *friendURL = [NSURL URLWithString:aFriend.link];
+    [[UIApplication sharedApplication] openURL:friendURL];
+    
+    return NO;
+}
+
 @end

@@ -17,6 +17,7 @@ static NSString * const kPriorityCacheKey = @"__priority_cache__";
 @synthesize lastName = _lastName;
 @synthesize avatarLink = _avatarLink;
 @synthesize identity = _identity;
+@synthesize link = _link;
 
 -(NSString*)cachePath
 {
@@ -66,6 +67,7 @@ static NSString * const kPriorityCacheKey = @"__priority_cache__";
         self.lastName = [entry objectForKey:@"last_name"];
         self.avatarLink = [[[entry objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
         self.identity = [entry objectForKey:@"id"];
+        self.link = [entry objectForKey:@"link"];
     }
     
     return self;

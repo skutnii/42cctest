@@ -14,6 +14,7 @@
 @property(nonatomic, copy) NSString *lastName;
 @property(nonatomic, copy) NSString *avatarLink;
 @property(nonatomic, copy) NSString *identity;
+@property(nonatomic, copy) NSString *link;
 
 @property(nonatomic, readonly) UIImage *cachedAvatar;
 
