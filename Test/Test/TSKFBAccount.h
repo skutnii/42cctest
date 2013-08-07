@@ -13,5 +13,6 @@
 
 -(id)initWithSession:(FBSession*)session;
 -(id)profile;
+-(NSArray*)friends;
 
 @end

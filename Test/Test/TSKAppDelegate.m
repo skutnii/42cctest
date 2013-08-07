@@ -18,10 +18,12 @@
 #import "TSKRequestException.h"
 #import "TSKLoadQueueManager.h"
 #import "TSKFBAccount.h"
+#import "TSKFriendsViewController.h"
 
 #define FIRSTRUN 0
 
 NSString * const kFBAppID = @"195008177329274";
+NSString * const kLoginStateChangeNotification = @"__login_state_change_notification__";
 
 @interface TSKAppDelegate ()
 {
@@ -50,10 +52,11 @@ NSString * const kFBAppID = @"195008177329274";
     {
         // Override point for customization after application launch.
         TSKUserViewController *viewController1 = [[TSKUserViewController alloc] init];
-        TSKAuthorInfoViewController *viewController2 = [[TSKAuthorInfoViewController alloc] init];
+        TSKFriendsViewController *viewController2 = [[TSKFriendsViewController alloc] init];
+        TSKAuthorInfoViewController *viewController3 = [[TSKAuthorInfoViewController alloc] init];
         
         self.tabBarController = [[UITabBarController alloc] init];
-        self.tabBarController.viewControllers = @[viewController1, viewController2];
+        self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3];
 
         self.window.rootViewController = self.tabBarController;
     }
@@ -68,10 +71,15 @@ NSString * const kFBAppID = @"195008177329274";
     firstItem.image = [UIImage imageNamed:@"first.png"];
     
     UITabBarItem *secondItem = [tabItems objectAtIndex:1];
-    secondItem.title = @"About";
-    secondItem.image = [UIImage imageNamed:@"second.png"];
+    secondItem.title = @"Friends";
+    
+    UITabBarItem *thirdItem = [tabItems objectAtIndex:2];
+    thirdItem.title = @"About";
+    thirdItem.image = [UIImage imageNamed:@"second.png"];
     
     self.window.rootViewController = self.tabBarController;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:nil];
     
 #if FIRSTRUN
     [self createDefaultData];
@@ -230,6 +238,8 @@ NSString * const kFBAppID = @"195008177329274";
     self.fbSession = nil;
     
     _fbAcc = nil;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginStateChangeNotification object:nil];
 }
 
 @end
