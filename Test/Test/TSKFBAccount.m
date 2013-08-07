@@ -8,6 +8,7 @@
 
 #import "TSKFBAccount.h"
 #import "SKCallExecutor.h"
+#import "TSKFriend.h"
 
 extern NSString * const kFBAppID;
 
@@ -65,11 +66,21 @@ extern NSString * const kFBAppID;
 -(NSArray*)friends
 {
     FBRequest *friendsGetter = [FBRequest requestForGraphPath:@"me/friends"];
-    [friendsGetter.parameters setObject:@"id,name,picture,link" forKey:@"fields"];
+    [friendsGetter.parameters
+     setObject:@"id,name,picture,first_name,last_name,link" forKey:@"fields"];
     friendsGetter.session = self.session;
     
     NSDictionary *data = [self dataForFBRequest:friendsGetter];
-    return [data objectForKey:@"data"];
+    NSArray *rawFriends = [data objectForKey:@"data"];
+    
+    NSMutableArray *realFriends = [NSMutableArray arrayWithCapacity:rawFriends.count];
+    for (NSDictionary *entry in rawFriends)
+    {
+        TSKFriend *friend = [[TSKFriend alloc] initWithDataEntry:entry];
+        [realFriends addObject:friend];
+    }
+    
+    return realFriends;
 }
 
 @end

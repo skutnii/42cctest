@@ -10,12 +10,17 @@
 #import "TSKAppDelegate.h"
 #import "TSKFBAccount.h"
 #import "TSKLoadQueueManager.h"
+#import "TSKFriend.h"
+#import "TSKFriendCell.h"
+#import "TSKPriorityEditorViewController.h"
 
 @interface TSKFriendsViewController ()
 
 @property(nonatomic, strong) NSArray *friends;
 
 -(void)getFriends;
+
+-(void)prioritizeFriend:(TSKFriend*)friend;
 
 @end
 
@@ -44,43 +49,6 @@
     [self getFriends];
 }
 
--(NSString*)cachePath
-{
-    TSKAppDelegate *appDelegate = (TSKAppDelegate*)[UIApplication sharedApplication].delegate;
-    NSString *docsDir = [appDelegate appDocumentsDirectory];
-    
-    NSString *cacheDir = [docsDir stringByAppendingPathComponent:@"__friends_data_cache__"];
-    NSFileManager *fManager = [NSFileManager defaultManager];
-    if (![fManager fileExistsAtPath:cacheDir])
-    {
-        [fManager createDirectoryAtPath:cacheDir withIntermediateDirectories:NO attributes:nil error:NULL];
-    }
-    
-    return cacheDir;
-}
-
--(NSString*)cachePathForLink:(NSString*)link
-{
-    NSString *cachePath = [self cachePath];
-    NSString *fName = [link lastPathComponent];
-    NSString *cachedObjectPath = [cachePath stringByAppendingPathComponent:fName];
-    
-    return cachedObjectPath;
-}
-
--(NSData*)cachedDataForLink:(NSString*)link
-{
-    NSString *cachedObjectPath = [self cachePathForLink:link];
-    
-    return [NSData dataWithContentsOfFile:cachedObjectPath];
-}
-
--(void)cacheData:(NSData*)data forLink:(NSString*)link
-{
-    NSString *cachedObjectPath = [self cachePathForLink:link];
-    [data writeToFile:cachedObjectPath atomically:YES];
-}
-
 -(void)reloadIndexPath:(NSIndexPath*)iPath
 {
     [self.friendsListView
@@ -104,18 +72,34 @@
     [self.spinner startAnimating];
     
     TSKLoadTransaction getFriends = [TSKLoadQueueManager exceptionHandleDecoratedTransaction:^{
-        self.friends = [acc friends];
+
+        NSSortDescriptor *priorityDesc = [[NSSortDescriptor alloc]
+                                          initWithKey:@"priority" ascending:NO comparator:^(id value1, id value2){
+                                              
+                                              if ([value1 unsignedIntValue] < [value2 unsignedIntValue])
+                                              {
+                                                  return NSOrderedAscending;
+                                              }
+                                              
+                                              if ([value2 unsignedIntValue] < [value1 unsignedIntValue])
+                                              {
+                                                  return NSOrderedDescending;
+                                              }
+                                              
+                                              return NSOrderedSame;
+                                          }];
+        
+        self.friends = [[acc friends] sortedArrayUsingDescriptors:[NSArray arrayWithObject:priorityDesc]];
         
         [self performSelectorOnMainThread:@selector(didLoadFriends)
                                withObject:nil waitUntilDone:YES];
         
         for (unsigned int i = 0; i < self.friends.count; ++i)
         {
-            NSDictionary *friend = [self.friends objectAtIndex:i];
-            NSString *avaLink = [[[friend objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
-            NSURL *avaUrl = [NSURL URLWithString:avaLink];
+            TSKFriend *friend = [self.friends objectAtIndex:i];
+            NSURL *avaUrl = [NSURL URLWithString:friend.avatarLink];
             NSData *avaData = [NSData dataWithContentsOfURL:avaUrl];
-            [self cacheData:avaData forLink:avaLink];
+            [friend cacheAvatarData:avaData];
             
             NSIndexPath *reloadPath = [NSIndexPath indexPathForRow:i inSection:0];
             [self
@@ -148,34 +132,58 @@
 -(UITableViewCell*)tableView:(UITableView*)tView
        cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.friendsListView dequeueReusableCellWithIdentifier:@"Cell"];
+    TSKFriendCell *cell = [self.friendsListView dequeueReusableCellWithIdentifier:@"Cell"];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[TSKFriendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    NSDictionary *aFriend = [self.friends objectAtIndex:indexPath.row];
-    NSString *link = [[[aFriend objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+    TSKFriend *aFriend = [self.friends objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [aFriend objectForKey:@"name"];
-    NSData *avaData = [self cachedDataForLink:link];
-    if (avaData)
-    {
-        cell.imageView.image = [UIImage imageWithData:avaData];
-    }
-    else
-    {
-        cell.imageView.image = nil;
-    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", aFriend.firstName, aFriend.lastName];
+    cell.imageView.image = aFriend.cachedAvatar;
+    cell.aFriend = aFriend;
+    cell.owner = self;
     
     return cell;
 }
 
+-(void)prioritizeFriend:(TSKFriend *)friend
+{
+    TSKPriorityEditorViewController *prioritizer = [[TSKPriorityEditorViewController alloc] init];
+    prioritizer.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    prioritizer.aFriend = friend;
+    prioritizer.owner = self;
+    
+    [self presentViewController:prioritizer animated:YES completion:NULL];
+}
+
+-(void)didPrioritizeFriend:(TSKFriend *)friend
+{
+    NSSortDescriptor *priorityDesc = [[NSSortDescriptor alloc]
+                                      initWithKey:@"priority" ascending:NO comparator:^(id value1, id value2){
+                                          
+                                          if ([value1 unsignedIntValue] < [value2 unsignedIntValue])
+                                          {
+                                              return NSOrderedAscending;
+                                          }
+                                          
+                                          if ([value2 unsignedIntValue] < [value1 unsignedIntValue])
+                                          {
+                                              return NSOrderedDescending;
+                                          }
+                                          
+                                          return NSOrderedSame;
+                                      }];
+    
+    self.friends = [self.friends sortedArrayUsingDescriptors:[NSArray arrayWithObject:priorityDesc]];
+    [self.friendsListView reloadData];
+}
+
 -(BOOL)tableView:(UITableView*)tView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *data = [self.friends objectAtIndex:indexPath.row];
-    
-    NSURL *friendURL = [NSURL URLWithString:[data objectForKey:@"link"]];
+    TSKFriend *aFriend = [self.friends objectAtIndex:indexPath.row];
+    NSURL *friendURL = [NSURL URLWithString:aFriend.link];
     [[UIApplication sharedApplication] openURL:friendURL];
     
     return NO;
