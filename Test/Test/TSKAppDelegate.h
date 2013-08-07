@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "FacebookSDK.h"
+
+@class TSKFBAccount;
 
 @interface TSKAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
@@ -17,5 +20,12 @@
 @property (strong, nonatomic) NSPersistentStoreCoordinator *storeManager;
 @property (strong, nonatomic) NSPersistentStore *dataStore;
 @property (strong, nonatomic) NSManagedObjectContext *dataContext;
+
+@property (nonatomic, readonly) TSKFBAccount *fbAccount;
+@property (strong, nonatomic) FBSession *fbSession;
+
+-(void)handleException:(NSException*)exc;
+-(void)logout;
+-(void)authenticate;
 
 @end

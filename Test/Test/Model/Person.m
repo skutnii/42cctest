@@ -23,4 +23,32 @@
 @dynamic phones;
 @dynamic messengers;
 
+-(void)removeAll
+{
+    NSManagedObjectContext *context = self.managedObjectContext;
+    
+    NSSet *emails = self.emails;
+    [self removeEmails:emails];
+    for (Email *email in emails)
+    {
+        [context deleteObject:email];
+    }
+    
+    NSSet *phones = self.phones;
+    [self removePhones:phones];
+    for (Phone *phone in phones)
+    {
+        [context deleteObject:phone];
+    }
+    
+    NSSet *messengers = self.messengers;
+    [self removeMessengers:messengers];
+    for (Messenger *messenger in messengers)
+    {
+        [context deleteObject:messenger];
+    }
+    
+    [context deleteObject:self];
+}
+
 @end

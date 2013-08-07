@@ -40,4 +40,6 @@
 - (void)addMessengers:(NSSet *)values;
 - (void)removeMessengers:(NSSet *)values;
 
+-(void)removeAll;
+
 @end
